@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @prueba.nombre %>
+</p>
+
+<p>
+  <b>Curso:</b>
+  <%= @prueba.curso %>
+</p>
+
+<p>
+  <b>Fecha:</b>
+  <%= @prueba.fecha %>
+</p>
+
+<p>
+  <b>Preguntas:</b>
+  <%= @prueba.preguntas %>
+</p>
+
+<p>
+  <b>Estado:</b>
+  <%= @prueba.estado %>
+</p>
+
+<p>
+  <b>Duracion:</b>
+  <%= @prueba.duracion %>
+</p>
+
+<p>
+  <b>Calificacion:</b>
+  <%= @prueba.calificacion %>
+</p>
+
+<p>
+  <b>Comentario:</b>
+  <%= @prueba.comentario %>
+</p>
+
+
+<%= link_to 'Edit', edit_prueba_path(@prueba) %> |
+<%= link_to 'Back', pruebas_path %>

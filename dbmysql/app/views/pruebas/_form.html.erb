@@ -1,0 +1,49 @@
+<%= form_for(@prueba) do |f| %>
+  <% if @prueba.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prueba.errors.count, "error") %> prohibited this prueba from being saved:</h2>
+
+      <ul>
+      <% @prueba.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :curso %><br />
+    <%= f.number_field :curso %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha %><br />
+    <%= f.text_field :fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :preguntas %><br />
+    <%= f.text_area :preguntas %>
+  </div>
+  <div class="field">
+    <%= f.label :estado %><br />
+    <%= f.text_field :estado %>
+  </div>
+  <div class="field">
+    <%= f.label :duracion %><br />
+    <%= f.text_field :duracion %>
+  </div>
+  <div class="field">
+    <%= f.label :calificacion %><br />
+    <%= f.text_field :calificacion %>
+  </div>
+  <div class="field">
+    <%= f.label :comentario %><br />
+    <%= f.text_area :comentario %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
