@@ -34,7 +34,7 @@ namespace eQuiz
 
         private void bnIniciar_Click(object sender, EventArgs e)
         {
-            Inicio inicio = new Inicio();
+            Mantenimiento inicio = new Mantenimiento();
             inicio.Show();            
             this.Hide();
         }

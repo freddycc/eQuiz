@@ -25,14 +25,18 @@ class ProfesoresController < ApplicationController
   def add
     @profesore = Profesore.new
     @profesore.nombre = params[:nombre]
-    @profesore.apellido = params[:apellido]
+    @profesore.apellido = params[:apellidos]
     @profesore.cedula = params[:cedula]
     @profesore.email = params[:email]
     @profesore.password = params[:password]
     @profesore.username = params[:username]
     
     respond_to do |format|
-      format.json { render json: @profesore }
+      if @profesore.save
+        format.json { render json: @profesore, notice: 'created' }
+      else
+        format.json { render json: @profesore.errors }
+      end
     end
     #@profesore.save
   end

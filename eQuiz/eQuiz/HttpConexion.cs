@@ -58,7 +58,8 @@ namespace eQuiz
             return result;
         }
 
-        public string HttpPost(string url, string[] paramName, string[] paramVal)
+        public string HttpPost(string url,
+    string[] paramName, string[] paramVal)
         {
             HttpWebRequest req = WebRequest.Create(new Uri(url))
                                  as HttpWebRequest;
@@ -77,9 +78,9 @@ namespace eQuiz
                 paramz.Append("&");
             }
 
-            //this.EjecutarAccion(url, "post", paramz);
             // Encode the parameters as form data:
-            byte[] formData = UTF8Encoding.UTF8.GetBytes(paramz.ToString());
+            byte[] formData =
+                UTF8Encoding.UTF8.GetBytes(paramz.ToString());
             req.ContentLength = formData.Length;
 
             // Send the request:

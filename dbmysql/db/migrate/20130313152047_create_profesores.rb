@@ -5,7 +5,7 @@ class CreateProfesores < ActiveRecord::Migration
       t.string :email
       t.string :cedula
       t.string :nombre
-      t.string :apellido
+      t.string :apellidos
       t.string :password
 
       t.timestamps

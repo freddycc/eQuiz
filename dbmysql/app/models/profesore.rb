@@ -1,3 +1,3 @@
 class Profesore < ActiveRecord::Base
-  attr_accessible :apellido, :cedula, :email, :nombre, :password, :username
+  attr_accessible :cedula, :nombre, :apellidos, :email, :username, :password
 end

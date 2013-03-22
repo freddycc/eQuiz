@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace eQuiz
 {
-    public partial class Inicio : Form
+    public partial class Mantenimiento : Form
     {
-        public Inicio()
+        public Mantenimiento()
         {
             InitializeComponent();
             this.actTabla();
@@ -20,8 +20,10 @@ namespace eQuiz
         public void actTabla()
         {
             HttpConexion con = new HttpConexion();
-            DataSet resorce = con.ConvertXMLToDataSet("http://localhost:3000/profesores.xml");
+            DataSet resorce = con.ConvertXMLToDataSet("http://localhost:3000/profesores.xml");            
             this.gridProfes.DataSource = resorce.Tables[1];
+            resorce = con.ConvertXMLToDataSet("http://localhost:3000/estudiantes.xml");
+            this.gridEstud.DataSource = resorce.Tables[1];
 
         }
 

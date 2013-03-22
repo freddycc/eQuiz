@@ -33,19 +33,22 @@ class EstudiantesController < ApplicationController
     end
   end
 
-  def newest
+  def add
     @estudiante =  Estudiante.new
     @estudiante.nombre = params[:nombre]
     @estudiante.email = params[:email]
-    @estudiante.apellido = params[:apellido]
-    @estudiante.pass = params[:pass]
+    @estudiante.apellidos = params[:apellidos]
+    @estudiante.password = params[:password]
     @estudiante.cedula = params[:cedula]
     @estudiante.username = params[:username]
-    @estudiante.save
-    
+
     respond_to do |format|
-      format.json { render json: @estudiante }
-      format.xml { render xml: @estudiante }
+      if @estudiante.save
+        format.json { render json: @estudiante, notice: 'Estudiante was successfully created.' }
+        format.xml { render xml: @estudiante, status: :created, location: @estudiante }
+      else
+        format.json { render json: @estudiante.errors, status: :unprocessable_entity }
+      end
     end
   end
 

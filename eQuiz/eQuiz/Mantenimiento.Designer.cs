@@ -1,6 +1,6 @@
 ﻿namespace eQuiz
 {
-    partial class Inicio
+    partial class Mantenimiento
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabEstud = new System.Windows.Forms.TabPage();
             this.bnBorrar = new System.Windows.Forms.Button();
             this.bnCrearEstd = new System.Windows.Forms.Button();
@@ -47,7 +46,6 @@
             // 
             // tabControl
             // 
-            this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabEstud);
             this.tabControl.Controls.Add(this.tabProfes);
             this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -56,16 +54,6 @@
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(1096, 565);
             this.tabControl.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1088, 536);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabEstud
             // 
@@ -181,7 +169,6 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabEstud;
         private System.Windows.Forms.DataGridView gridEstud;
         private System.Windows.Forms.TabPage tabProfes;

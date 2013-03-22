@@ -10,14 +10,21 @@ Dbmysql::Application.routes.draw do
 
   resources :estudiantes
 
+  #Actions of students
+  match 'estudiantes/add' => 'estudiantes#add', :via => :post
+
+
+  #Actions of teachers
   match 'profesores/add' => 'profesores#add', :via => :post
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
-  match ':controller/:action/:apellido/:cedula/:email/:nombre/:pass/:username.:format'
+  # match ':controller/:action/:apellido/:cedula/:email/:nombre/:pass/:username.:format'
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)

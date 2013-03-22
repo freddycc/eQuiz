@@ -25,7 +25,7 @@ namespace eQuiz
             string url = "";        
             var[0] = "nombre";
             valor[0] = this.txtNombre.Text;
-            var[1] = "apellido";
+            var[1] = "apellidos";
             valor[1] = this.txtApell.Text;
             var[2] = "cedula";
             valor[2] = this.txtCedula.Text;
@@ -38,11 +38,11 @@ namespace eQuiz
 
             if(this.rol.Equals("1"))
             {
-                url="http://localhost:3000/profesores/add";
+                url="http://localhost:3000/profesores/add.json";
             }
             if(this.rol.Equals("2"))
             {
-                url = "http://localhost:3000/estudiantes";
+                url = "http://localhost:3000/estudiantes/add.json";
             }
             HttpConexion ejecutar = new HttpConexion();
             this.txtResponse.Text = ejecutar.HttpPost(url, var, valor);
