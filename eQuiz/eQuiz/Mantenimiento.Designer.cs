@@ -37,6 +37,18 @@
             this.button1 = new System.Windows.Forms.Button();
             this.bnCrearProf = new System.Windows.Forms.Button();
             this.gridProfes = new System.Windows.Forms.DataGridView();
+            this.cedulaProf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreProf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidosProf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userProf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailProf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pasProf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tabEstud.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEstud)).BeginInit();
@@ -96,9 +108,20 @@
             // 
             // gridEstud
             // 
-            this.gridEstud.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridEstud.AllowUserToAddRows = false;
+            this.gridEstud.AllowUserToDeleteRows = false;
+            this.gridEstud.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.gridEstud.ColumnHeadersHeight = 40;
+            this.gridEstud.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cedula,
+            this.nombre,
+            this.apellidos,
+            this.usuario,
+            this.email,
+            this.password});
             this.gridEstud.Location = new System.Drawing.Point(215, 134);
             this.gridEstud.Name = "gridEstud";
+            this.gridEstud.ReadOnly = true;
             this.gridEstud.Size = new System.Drawing.Size(830, 268);
             this.gridEstud.TabIndex = 0;
             // 
@@ -143,20 +166,107 @@
             // 
             // gridProfes
             // 
+            this.gridProfes.AllowUserToAddRows = false;
             this.gridProfes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridProfes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cedulaProf,
+            this.nombreProf,
+            this.apellidosProf,
+            this.userProf,
+            this.emailProf,
+            this.pasProf});
             this.gridProfes.Location = new System.Drawing.Point(216, 134);
             this.gridProfes.Name = "gridProfes";
             this.gridProfes.Size = new System.Drawing.Size(830, 268);
             this.gridProfes.TabIndex = 9;
             // 
-            // Inicio
+            // cedulaProf
+            // 
+            this.cedulaProf.HeaderText = "Cédula";
+            this.cedulaProf.Name = "cedulaProf";
+            this.cedulaProf.ReadOnly = true;
+            // 
+            // nombreProf
+            // 
+            this.nombreProf.HeaderText = "Nombre";
+            this.nombreProf.Name = "nombreProf";
+            this.nombreProf.ReadOnly = true;
+            // 
+            // apellidosProf
+            // 
+            this.apellidosProf.HeaderText = "Apellidos";
+            this.apellidosProf.Name = "apellidosProf";
+            this.apellidosProf.ReadOnly = true;
+            // 
+            // userProf
+            // 
+            this.userProf.HeaderText = "Nombre de Usuario";
+            this.userProf.Name = "userProf";
+            this.userProf.ReadOnly = true;
+            // 
+            // emailProf
+            // 
+            this.emailProf.HeaderText = "Email";
+            this.emailProf.Name = "emailProf";
+            this.emailProf.ReadOnly = true;
+            // 
+            // pasProf
+            // 
+            this.pasProf.HeaderText = "Password";
+            this.pasProf.Name = "pasProf";
+            this.pasProf.ReadOnly = true;
+            // 
+            // cedula
+            // 
+            this.cedula.HeaderText = "Cédula";
+            this.cedula.Name = "cedula";
+            this.cedula.ReadOnly = true;
+            this.cedula.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // apellidos
+            // 
+            this.apellidos.HeaderText = "Apellidos";
+            this.apellidos.Name = "apellidos";
+            this.apellidos.ReadOnly = true;
+            this.apellidos.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // usuario
+            // 
+            this.usuario.HeaderText = "Nombre Usuario";
+            this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
+            this.usuario.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // email
+            // 
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            this.email.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // password
+            // 
+            this.password.HeaderText = "Password";
+            this.password.Name = "password";
+            this.password.ReadOnly = true;
+            this.password.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Mantenimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1176, 599);
             this.Controls.Add(this.tabControl);
-            this.Name = "Inicio";
+            this.Name = "Mantenimiento";
             this.Text = "Inicio";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Mantenimiento_FormClosed);
             this.tabControl.ResumeLayout(false);
             this.tabEstud.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridEstud)).EndInit();
@@ -177,5 +287,17 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button bnCrearProf;
         private System.Windows.Forms.DataGridView gridProfes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cedulaProf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreProf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidosProf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userProf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailProf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pasProf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cedula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn password;
     }
 }

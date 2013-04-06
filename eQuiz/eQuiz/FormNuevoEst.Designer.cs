@@ -1,6 +1,6 @@
 ﻿namespace eQuiz
 {
-    partial class FormNuevo
+    partial class FormNuevoEst
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,6 @@
             this.txtPass = new System.Windows.Forms.TextBox();
             this.bnCrear = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtResponse = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -164,20 +163,11 @@
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // txtResponse
-            // 
-            this.txtResponse.Location = new System.Drawing.Point(427, 48);
-            this.txtResponse.Name = "txtResponse";
-            this.txtResponse.Size = new System.Drawing.Size(308, 295);
-            this.txtResponse.TabIndex = 14;
-            this.txtResponse.Text = "";
-            // 
-            // FormNuevo
+            // FormNuevoEst
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 475);
-            this.Controls.Add(this.txtResponse);
+            this.ClientSize = new System.Drawing.Size(501, 475);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.bnCrear);
             this.Controls.Add(this.txtPass);
@@ -194,7 +184,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FormNuevo";
+            this.Name = "FormNuevoEst";
             this.Text = "FormNuevo";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -217,6 +207,5 @@
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Button bnCrear;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RichTextBox txtResponse;
     }
 }

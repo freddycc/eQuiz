@@ -9,10 +9,10 @@ using System.Windows.Forms;
 
 namespace eQuiz
 {
-    public partial class FormNuevo : Form
+    public partial class FormNuevoEst : Form
     {
         private string rol;
-        public FormNuevo(string rol)
+        public FormNuevoEst(string rol)
         {
             this.rol = rol;
             InitializeComponent();
@@ -35,17 +35,9 @@ namespace eQuiz
             valor[4] = this.txtEmail.Text;
             var[5] = "password";
             valor[5] = this.txtPass.Text;
-
-            if(this.rol.Equals("1"))
-            {
-                url="http://localhost:3000/profesores/add.json";
-            }
-            if(this.rol.Equals("2"))
-            {
-                url = "http://localhost:3000/estudiantes/add.json";
-            }
+            url = "http://localhost:3000/estudiantes/add.json";       
             HttpConexion ejecutar = new HttpConexion();
-            this.txtResponse.Text = ejecutar.HttpPost(url, var, valor);
+            ejecutar.HttpPost(url, var, valor);
         }
     }
 }

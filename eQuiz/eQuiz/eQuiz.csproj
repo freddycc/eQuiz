@@ -39,9 +39,7 @@
     <Reference Include="System.Web">
       <HintPath>..\..\..\..\Users\Freddy\Desktop\System.Web.dll</HintPath>
     </Reference>
-    <Reference Include="system.web.extensions">
-      <HintPath>..\..\..\..\Users\Freddy\Downloads\system.web.extensions.dll</HintPath>
-    </Reference>
+    <Reference Include="system.web.extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,11 +50,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormNuevo.cs">
+    <Compile Include="FormNuevoEst.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormNuevo.Designer.cs">
-      <DependentUpon>FormNuevo.cs</DependentUpon>
+    <Compile Include="FormNuevoEst.Designer.cs">
+      <DependentUpon>FormNuevoEst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNuevoProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNuevoProf.Designer.cs">
+      <DependentUpon>FormNuevoProf.cs</DependentUpon>
     </Compile>
     <Compile Include="HttpConexion.cs" />
     <Compile Include="Mantenimiento.cs">
@@ -73,8 +77,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormNuevo.resx">
-      <DependentUpon>FormNuevo.cs</DependentUpon>
+    <EmbeddedResource Include="FormNuevoEst.resx">
+      <DependentUpon>FormNuevoEst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNuevoProf.resx">
+      <DependentUpon>FormNuevoProf.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento.resx">
       <DependentUpon>Mantenimiento.cs</DependentUpon>
