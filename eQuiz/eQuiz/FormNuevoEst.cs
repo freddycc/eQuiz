@@ -11,33 +11,48 @@ namespace eQuiz
 {
     public partial class FormNuevoEst : Form
     {
-        private string rol;
-        public FormNuevoEst(string rol)
-        {
-            this.rol = rol;
+        string ID="";
+        public FormNuevoEst()
+        {            
             InitializeComponent();
         }
-
+        public FormNuevoEst(string nombre, string apellidos, string cedula, string usuario, string email, string pass, string id)
+        {
+            this.ID = id;
+            InitializeComponent();
+            this.txtNombre.Text = nombre;
+            this.txtApell.Text = apellidos;
+            this.txtCedula.Text = cedula;
+            this.txtUsuario.Text = usuario;
+            this.txtEmail.Text = email;
+            this.txtPass.Text = pass;
+            this.txtPass.Hide();
+            this.label6.Hide();
+            this.bnCrear.Text = "Guardar";
+        }
         private void bnCrear_Click(object sender, EventArgs e)
         {
-            string[] var = new string[6];
-            string[] valor = new string[6];
-            string url = "";        
-            var[0] = "nombre";
-            valor[0] = this.txtNombre.Text;
-            var[1] = "apellidos";
-            valor[1] = this.txtApell.Text;
-            var[2] = "cedula";
-            valor[2] = this.txtCedula.Text;
-            var[3] = "username";
-            valor[3] = this.txtUsuario.Text;
-            var[4] = "email";
-            valor[4] = this.txtEmail.Text;
-            var[5] = "password";
-            valor[5] = this.txtPass.Text;
-            url = "http://localhost:3000/estudiantes/add.json";       
-            HttpConexion ejecutar = new HttpConexion();
-            ejecutar.HttpPost(url, var, valor);
+            Estudiante est = new Estudiante();
+            if (ID.Equals(""))
+            {
+                if (est.crear(this.txtNombre.Text, this.txtApell.Text, this.txtCedula.Text, this.txtUsuario.Text, this.txtEmail.Text, this.txtPass.Text))
+                {
+                    MessageBox.Show("Se guardó correctamente.", "", MessageBoxButtons.OK);
+                }
+                else
+                { MessageBox.Show("Error al guardar.", "", MessageBoxButtons.OK); }
+            }
+            else
+            {
+                if (est.edit(this.txtNombre.Text, this.txtApell.Text, this.txtCedula.Text, this.txtUsuario.Text, this.txtEmail.Text, this.txtPass.Text, ID))
+                {
+                    MessageBox.Show("Se guardó correctamente.", "", MessageBoxButtons.OK);
+                }
+                else
+                { MessageBox.Show("Error al guardar.", "", MessageBoxButtons.OK); }
+            }
+            this.Dispose();
+            this.Close();
         }
     }
 }

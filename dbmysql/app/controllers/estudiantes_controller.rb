@@ -5,9 +5,15 @@ class EstudiantesController < ApplicationController
     @estudiantes = Estudiante.all
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @estudiantes }
-      format.xml { render xml: @estudiantes }
+      if @estudiantes.empty?
+        format.html # index.html.erb
+        format.json { head :no_content }
+        format.xml { head :no_content }
+      else     
+        format.html # index.html.erb   
+        format.json { render json: @estudiantes }
+        format.xml { render xml: @estudiantes }
+      end
     end
   end
 
@@ -32,7 +38,9 @@ class EstudiantesController < ApplicationController
       format.json { render json: @estudiante }
     end
   end
-
+  
+  # POST /estudiantes
+  # POST /estudiantes.json
   def add
     @estudiante =  Estudiante.new
     @estudiante.nombre = params[:nombre]
@@ -57,8 +65,8 @@ class EstudiantesController < ApplicationController
     @estudiante = Estudiante.find(params[:id])
   end
 
-  # POST /estudiantes
-  # POST /estudiantes.json
+  
+  # Codigo sin utilizar
   def create
     @estudiante = Estudiante.new(params[:estudiante])
 
@@ -77,14 +85,19 @@ class EstudiantesController < ApplicationController
   # PUT /estudiantes/1.json
   def update
     @estudiante = Estudiante.find(params[:id])
-
+    @estudiante.nombre = params[:nombre]
+    @estudiante.email = params[:email]
+    @estudiante.apellidos = params[:apellidos]
+    @estudiante.password = params[:password]
+    @estudiante.cedula = params[:cedula]
+    @estudiante.username = params[:username]
     respond_to do |format|
       if @estudiante.update_attributes(params[:estudiante])
         format.html { redirect_to @estudiante, notice: 'Estudiante was successfully updated.' }
-        format.json { head :no_content }
+        format.json { render json: @estudiante, status: :created }
       else
         format.html { render action: "edit" }
-        format.json { render json: @estudiante.errors, status: :unprocessable_entity }
+        format.json { head :no_content }
       end
     end
   end

@@ -9,43 +9,37 @@ using System.Windows.Forms;
 
 namespace eQuiz
 {
-    public partial class FormNuevoProf : Form
+    public partial class FormNuevoCurso : Form
     {
-        string ID = "";
-        public FormNuevoProf()
+        private string ID = "";
+        public FormNuevoCurso()
         {
             InitializeComponent();
         }
-        public FormNuevoProf(string nombre, string apellidos, string cedula, string usuario, string email, string pass, string id)
+        public FormNuevoCurso(string id, string nombre, string descrip, string cod)
         {
             this.ID = id;
             InitializeComponent();
-
+            this.txtCod.Text = cod;
             this.txtNombre.Text = nombre;
-            this.txtApell.Text = apellidos;
-            this.txtCedula.Text = cedula;
-            this.txtUsuario.Text = usuario;
-            this.txtEmail.Text = email;
-            this.txtPass.Text = pass;
-            this.txtPass.Hide();
-            this.label6.Hide();
+            this.txtDescripcion.Text = descrip;
             this.bnCrear.Text = "Guardar";
         }
-
         private void bnCrear_Click(object sender, EventArgs e)
         {
-            Profesor prof = new Profesor();
+            Cursos curso = new Cursos();
             if (ID.Equals(""))
             {
-                if (prof.crear(this.txtNombre.Text, this.txtApell.Text, this.txtCedula.Text, this.txtUsuario.Text, this.txtEmail.Text, this.txtPass.Text))
+                if (curso.crear(this.txtCod.Text, this.txtNombre.Text, this.txtDescripcion.Text))
                 {
                     MessageBox.Show("Se guardó correctamente.", "", MessageBoxButtons.OK);
                 }
                 else
                 { MessageBox.Show("Error al guardar.", "", MessageBoxButtons.OK); }
             }
-            else {
-                if (prof.edit(this.txtNombre.Text, this.txtApell.Text, this.txtCedula.Text, this.txtUsuario.Text, this.txtEmail.Text,this.txtPass.Text, ID))
+            else
+            {
+                if (curso.edit(this.txtCod.Text, this.txtNombre.Text, this.txtDescripcion.Text,ID))
                 {
                     MessageBox.Show("Se guardó correctamente.", "", MessageBoxButtons.OK);
                 }
@@ -54,6 +48,12 @@ namespace eQuiz
             }
             this.Dispose();
             this.Close();
-        }
+        }             
+
+        private void bnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            this.Close();
+        }        
     }
 }

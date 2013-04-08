@@ -5,9 +5,15 @@ class CursosController < ApplicationController
     @cursos = Curso.all
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @cursos }
-      format.xml { render xml: @cursos }
+      if @cursos.empty?
+        format.html # index.html.erb
+        format.json { render json: @cursos }
+        format.xml { head :no_content }
+      else
+        format.html # index.html.erb
+        format.json { render json: @cursos }
+        format.xml { render xml: @cursos }
+      end
     end
   end
 
@@ -41,8 +47,10 @@ class CursosController < ApplicationController
   # POST /cursos
   # POST /cursos.json
   def create
-    @curso = Curso.new(params[:curso])
-
+    @curso = Curso.new
+    @curso.codigo = params[:codigo]
+    @curso.nombre = params[:nombre]
+    @curso.descripcion = params[:descripcion]
     respond_to do |format|
       if @curso.save
         format.html { redirect_to @curso, notice: 'Curso was successfully created.' }

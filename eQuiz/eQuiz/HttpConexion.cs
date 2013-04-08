@@ -59,11 +59,11 @@ namespace eQuiz
         }
 
         public string HttpPost(string url,
-    string[] paramName, string[] paramVal)
+    string[] paramName, string[] paramVal, string method)
         {
             HttpWebRequest req = WebRequest.Create(new Uri(url))
                                  as HttpWebRequest;
-            req.Method = "POST";
+            req.Method = method;
             req.ContentType = "application/x-www-form-urlencoded";
 
             // Build a string with all the params, properly encoded.
@@ -100,34 +100,8 @@ namespace eQuiz
             }
 
             return result;
-        }       
-
-        public string EjecutarAccion(string url, string metodo, object modelo = null)
-        {
-            request = WebRequest.Create(url) as HttpWebRequest;
-            request.Timeout = 10 * 1000;
-            request.Method = metodo;
-            request.ContentType = "application/json; charset=utf-8";
-
-            string credentials = Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes(usuario + ":" + clave));
-            request.Headers.Add("Authorization", "Basic " + credentials);
-
-            if (modelo != null)
-            {
-                var postString = new JavaScriptSerializer().Serialize(modelo);
-                byte[] data = UTF8Encoding.UTF8.GetBytes(postString);
-                request.ContentLength = data.Length;
-                Stream postStream = request.GetRequestStream();
-                postStream.Write(data, 0, data.Length);
-            }
-            HttpWebResponse response = request.GetResponse() as HttpWebResponse;
-            if (response.StatusCode != HttpStatusCode.NoContent)
-            {
-                StreamReader reader = new StreamReader(response.GetResponseStream());
-                return reader.ReadToEnd();
-            }
-
-            return "";
         }
+
+        
     }
 }

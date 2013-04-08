@@ -5,9 +5,15 @@ class ProfesoresController < ApplicationController
     @profesores = Profesore.all
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @profesores }
-      format.xml { render xml: @profesores }
+      if @profesores.empty?
+        format.html # index.html.erb
+        format.json { head :no_content }
+        format.xml { head :no_content }
+      else
+        format.html # index.html.erb
+        format.json { render json: @profesores }
+        format.xml { render xml: @profesores }
+      end
     end
   end
 
@@ -76,14 +82,19 @@ class ProfesoresController < ApplicationController
   # PUT /profesores/1.json
   def update
     @profesore = Profesore.find(params[:id])
-
+    @profesore.nombre = params[:nombre]
+    @profesore.apellido = params[:apellidos]
+    @profesore.cedula = params[:cedula]
+    @profesore.email = params[:email]
+    @profesore.password = params[:password]
+    @profesore.username = params[:username]
     respond_to do |format|
       if @profesore.update_attributes(params[:profesore])
         format.html { redirect_to @profesore, notice: 'Profesore was successfully updated.' }
-        format.json { head :no_content }
+        format.json { render json: @profesore, status: :created }
       else
         format.html { render action: "edit" }
-        format.json { render json: @profesore.errors, status: :unprocessable_entity }
+        format.json { head :no_content}#json: @profesore.errors, status: :unprocessable_entity }
       end
     end
   end
