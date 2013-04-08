@@ -32,6 +32,15 @@
             this.tabEstud = new System.Windows.Forms.TabPage();
             this.bnCrearEstd = new System.Windows.Forms.Button();
             this.gridEstud = new System.Windows.Forms.DataGridView();
+            this.cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_estud = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passEst = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.editEstud = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.elimEstud = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabProfes = new System.Windows.Forms.TabPage();
             this.bnCrearProf = new System.Windows.Forms.Button();
             this.gridProfes = new System.Windows.Forms.DataGridView();
@@ -44,15 +53,6 @@
             this.passProf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editProf = new System.Windows.Forms.DataGridViewButtonColumn();
             this.eliminProf = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_estud = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passEst = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.editEstud = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.elimEstud = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabCursos = new System.Windows.Forms.TabPage();
             this.bnCrearCurso = new System.Windows.Forms.Button();
             this.gridCursos = new System.Windows.Forms.DataGridView();
@@ -129,9 +129,74 @@
             this.gridEstud.Name = "gridEstud";
             this.gridEstud.ReadOnly = true;
             this.gridEstud.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridEstud.Size = new System.Drawing.Size(843, 268);
+            this.gridEstud.Size = new System.Drawing.Size(843, 345);
             this.gridEstud.TabIndex = 0;
             this.gridEstud.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridEstud_CellContentClick);
+            // 
+            // cedula
+            // 
+            this.cedula.HeaderText = "Cédula";
+            this.cedula.Name = "cedula";
+            this.cedula.ReadOnly = true;
+            this.cedula.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // apellidos
+            // 
+            this.apellidos.HeaderText = "Apellidos";
+            this.apellidos.Name = "apellidos";
+            this.apellidos.ReadOnly = true;
+            this.apellidos.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // usuario
+            // 
+            this.usuario.HeaderText = "Nombre Usuario";
+            this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
+            this.usuario.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // email
+            // 
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            this.email.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // id_estud
+            // 
+            this.id_estud.HeaderText = "ID";
+            this.id_estud.Name = "id_estud";
+            this.id_estud.ReadOnly = true;
+            this.id_estud.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // passEst
+            // 
+            this.passEst.HeaderText = "";
+            this.passEst.Name = "passEst";
+            this.passEst.ReadOnly = true;
+            this.passEst.Visible = false;
+            // 
+            // editEstud
+            // 
+            this.editEstud.HeaderText = "";
+            this.editEstud.Name = "editEstud";
+            this.editEstud.ReadOnly = true;
+            this.editEstud.Text = "Editar";
+            this.editEstud.UseColumnTextForButtonValue = true;
+            // 
+            // elimEstud
+            // 
+            this.elimEstud.HeaderText = "";
+            this.elimEstud.Name = "elimEstud";
+            this.elimEstud.ReadOnly = true;
+            this.elimEstud.Text = "Eliminar";
+            this.elimEstud.UseColumnTextForButtonValue = true;
             // 
             // tabProfes
             // 
@@ -176,7 +241,7 @@
             this.gridProfes.Location = new System.Drawing.Point(216, 134);
             this.gridProfes.Name = "gridProfes";
             this.gridProfes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridProfes.Size = new System.Drawing.Size(843, 268);
+            this.gridProfes.Size = new System.Drawing.Size(843, 345);
             this.gridProfes.TabIndex = 9;
             this.gridProfes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridProfes_CellContentClick);
             // 
@@ -246,71 +311,6 @@
             this.eliminProf.Text = "Eliminar";
             this.eliminProf.UseColumnTextForButtonValue = true;
             // 
-            // cedula
-            // 
-            this.cedula.HeaderText = "Cédula";
-            this.cedula.Name = "cedula";
-            this.cedula.ReadOnly = true;
-            this.cedula.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // apellidos
-            // 
-            this.apellidos.HeaderText = "Apellidos";
-            this.apellidos.Name = "apellidos";
-            this.apellidos.ReadOnly = true;
-            this.apellidos.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // usuario
-            // 
-            this.usuario.HeaderText = "Nombre Usuario";
-            this.usuario.Name = "usuario";
-            this.usuario.ReadOnly = true;
-            this.usuario.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // email
-            // 
-            this.email.HeaderText = "Email";
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            this.email.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // id_estud
-            // 
-            this.id_estud.HeaderText = "ID";
-            this.id_estud.Name = "id_estud";
-            this.id_estud.ReadOnly = true;
-            this.id_estud.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // passEst
-            // 
-            this.passEst.HeaderText = "";
-            this.passEst.Name = "passEst";
-            this.passEst.ReadOnly = true;
-            this.passEst.Visible = false;
-            // 
-            // editEstud
-            // 
-            this.editEstud.HeaderText = "";
-            this.editEstud.Name = "editEstud";
-            this.editEstud.ReadOnly = true;
-            this.editEstud.Text = "Editar";
-            this.editEstud.UseColumnTextForButtonValue = true;
-            // 
-            // elimEstud
-            // 
-            this.elimEstud.HeaderText = "";
-            this.elimEstud.Name = "elimEstud";
-            this.elimEstud.ReadOnly = true;
-            this.elimEstud.Text = "Eliminar";
-            this.elimEstud.UseColumnTextForButtonValue = true;
-            // 
             // tabCursos
             // 
             this.tabCursos.Controls.Add(this.bnCrearCurso);
@@ -348,11 +348,11 @@
             this.idCurso,
             this.editCurso,
             this.deletCurso});
-            this.gridCursos.Location = new System.Drawing.Point(218, 134);
+            this.gridCursos.Location = new System.Drawing.Point(217, 134);
             this.gridCursos.Name = "gridCursos";
             this.gridCursos.RowHeadersWidth = 100;
             this.gridCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCursos.Size = new System.Drawing.Size(843, 268);
+            this.gridCursos.Size = new System.Drawing.Size(702, 345);
             this.gridCursos.TabIndex = 11;
             this.gridCursos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCursos_CellContentClick);
             // 

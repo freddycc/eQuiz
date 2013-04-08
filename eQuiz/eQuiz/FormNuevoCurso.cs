@@ -16,7 +16,7 @@ namespace eQuiz
         {
             InitializeComponent();
         }
-        public FormNuevoCurso(string id, string nombre, string descrip, string cod)
+        public FormNuevoCurso(string cod, string nombre, string descrip, string id)
         {
             this.ID = id;
             InitializeComponent();

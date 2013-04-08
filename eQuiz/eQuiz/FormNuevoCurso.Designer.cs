@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtCod = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.RichTextBox();
             this.bnCancelar = new System.Windows.Forms.Button();
             this.bnCrear = new System.Windows.Forms.Button();
+            this.txtCod = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCod)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNombre
@@ -45,14 +46,6 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(209, 22);
             this.txtNombre.TabIndex = 21;
-            // 
-            // txtCod
-            // 
-            this.txtCod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCod.Location = new System.Drawing.Point(207, 48);
-            this.txtCod.Name = "txtCod";
-            this.txtCod.Size = new System.Drawing.Size(209, 22);
-            this.txtCod.TabIndex = 20;
             // 
             // label5
             // 
@@ -117,21 +110,29 @@
             this.bnCrear.UseVisualStyleBackColor = false;
             this.bnCrear.Click += new System.EventHandler(this.bnCrear_Click);
             // 
+            // txtCod
+            // 
+            this.txtCod.Location = new System.Drawing.Point(207, 49);
+            this.txtCod.Name = "txtCod";
+            this.txtCod.Size = new System.Drawing.Size(209, 20);
+            this.txtCod.TabIndex = 31;
+            // 
             // FormNuevoCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(501, 393);
+            this.Controls.Add(this.txtCod);
             this.Controls.Add(this.bnCancelar);
             this.Controls.Add(this.bnCrear);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.txtCod);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormNuevoCurso";
             this.Text = "FormNuevoCurso";
+            ((System.ComponentModel.ISupportInitialize)(this.txtCod)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,12 +141,12 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtCod;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox txtDescripcion;
         private System.Windows.Forms.Button bnCancelar;
         private System.Windows.Forms.Button bnCrear;
+        private System.Windows.Forms.NumericUpDown txtCod;
     }
 }

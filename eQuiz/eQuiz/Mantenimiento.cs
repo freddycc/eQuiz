@@ -46,10 +46,9 @@ namespace eQuiz
             if(resorce!=null){
                 DataTable cursos = resorce.Tables[1];
                 this.gridCursos.Rows.Clear();
-                for (int i = 0; i <= this.gridCursos.Rows.Count - 1; i++)
+                for (int i = 0; i <= cursos.Rows.Count - 1; i++)
                 {
-                    this.gridCursos.Rows.Add(cursos.Rows[i].ItemArray[1].ToString(), cursos.Rows[i].ItemArray[4].ToString(),
-                    cursos.Rows[i].ItemArray[0].ToString(), cursos.Rows[i].ItemArray[6].ToString(), cursos.Rows[i].ItemArray[3].ToString(), resorce.Tables[3].Rows[i].ItemArray[1].ToString());
+                    this.gridCursos.Rows.Add(resorce.Tables[2].Rows[i].ItemArray[1].ToString(), cursos.Rows[i].ItemArray[2].ToString(), cursos.Rows[i].ItemArray[1].ToString(), resorce.Tables[4].Rows[i].ItemArray[1].ToString());
                 }
             }
         }
