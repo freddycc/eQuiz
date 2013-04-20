@@ -80,6 +80,20 @@ class CursosController < ApplicationController
     end    
   end
 
+  # GET /cursos/1/pruebas.xml
+  def pruebas
+    @curso = Curso.find(params[:id])
+    @pruebas = @curso.pruebas
+
+    respond_to do |format|
+      if @pruebas.empty?
+        format.xml { head :no_content }
+      else
+        format.xml { render xml: @pruebas}
+      end
+    end
+  end
+
   # GET /cursos/new
   # GET /cursos/new.json
   def new

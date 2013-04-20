@@ -6,5 +6,5 @@ class Estudiante < ActiveRecord::Base
   has_many :cursos, :through => :matriculas
 
   has_many :respuestas
-  has_many :pruebas, :through => :respuestas
+  #has_many :pruebas, :through => :respuestas
 end

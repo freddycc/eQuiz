@@ -9,7 +9,13 @@ namespace eQuiz
     class Cursos
     {
         private HttpConexion ejecutar = new HttpConexion();
-        
+
+        public DataSet obtenerPruebas(string curso_id)
+        {
+            string url = "http://localhost:3000/cursos/" + curso_id + "/pruebas.xml";
+            return ejecutar.ConvertXMLToDataSet(url);
+        }
+
         public DataSet obtenerEstudiantes(string id)
         {
             string url = "http://localhost:3000/cursos/"+id+"/estudiantes.xml";

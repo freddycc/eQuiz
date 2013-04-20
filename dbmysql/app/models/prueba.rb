@@ -4,5 +4,6 @@ class Prueba < ActiveRecord::Base
   belongs_to :curso
 
   has_many :respuestas
-  has_many :estudiantes, :through => :respuestas
+
+  #has_many :estudiantes, :through => :respuestas
 end

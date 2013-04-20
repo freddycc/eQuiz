@@ -34,26 +34,44 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabNotif = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabCursos = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.gridPruebas = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.lblCurso = new System.Windows.Forms.Label();
             this.cbxCurso = new System.Windows.Forms.ComboBox();
             this.bnBuscar = new System.Windows.Forms.Button();
+            this.txNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txDuracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txComentario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txCreado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txIdPrueba = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridPruebActivas = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridPruebCalif = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabNotif.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabCursos.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPruebas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPruebActivas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPruebCalif)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -106,7 +124,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridView3);
+            this.groupBox3.Controls.Add(this.gridPruebCalif);
             this.groupBox3.Location = new System.Drawing.Point(47, 287);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(1137, 268);
@@ -114,31 +132,15 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Pruebas sin Calificación";
             // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(41, 23);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(1050, 228);
-            this.dataGridView3.TabIndex = 3;
-            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.gridPruebActivas);
             this.groupBox2.Location = new System.Drawing.Point(47, 11);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1137, 268);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pruebas Activas";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(41, 23);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1050, 226);
-            this.dataGridView1.TabIndex = 1;
             // 
             // tabCursos
             // 
@@ -157,7 +159,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.dataGridView2);
+            this.groupBox1.Controls.Add(this.gridPruebas);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Location = new System.Drawing.Point(24, 99);
             this.groupBox1.Name = "groupBox1";
@@ -166,13 +168,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pruebas del Curso";
             // 
-            // dataGridView2
+            // gridPruebas
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(39, 76);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1137, 355);
-            this.dataGridView2.TabIndex = 3;
+            this.gridPruebas.ColumnHeadersHeight = 30;
+            this.gridPruebas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.gridPruebas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.txNombre,
+            this.txEstado,
+            this.txDuracion,
+            this.txComentario,
+            this.txCreado,
+            this.txIdPrueba});
+            this.gridPruebas.Location = new System.Drawing.Point(39, 76);
+            this.gridPruebas.Name = "gridPruebas";
+            this.gridPruebas.RowHeadersVisible = false;
+            this.gridPruebas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.gridPruebas.Size = new System.Drawing.Size(992, 355);
+            this.gridPruebas.TabIndex = 3;
             // 
             // button1
             // 
@@ -212,6 +224,193 @@
             this.bnBuscar.TabIndex = 6;
             this.bnBuscar.Text = "Buscar Pruebas";
             this.bnBuscar.UseVisualStyleBackColor = true;
+            this.bnBuscar.Click += new System.EventHandler(this.bnBuscar_Click);
+            // 
+            // txNombre
+            // 
+            this.txNombre.Frozen = true;
+            this.txNombre.HeaderText = "Nombre";
+            this.txNombre.Name = "txNombre";
+            this.txNombre.ReadOnly = true;
+            this.txNombre.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.txNombre.Width = 180;
+            // 
+            // txEstado
+            // 
+            this.txEstado.Frozen = true;
+            this.txEstado.HeaderText = "Estado";
+            this.txEstado.Name = "txEstado";
+            this.txEstado.ReadOnly = true;
+            this.txEstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.txEstado.Width = 150;
+            // 
+            // txDuracion
+            // 
+            this.txDuracion.Frozen = true;
+            this.txDuracion.HeaderText = "Duración";
+            this.txDuracion.Name = "txDuracion";
+            this.txDuracion.ReadOnly = true;
+            this.txDuracion.Width = 160;
+            // 
+            // txComentario
+            // 
+            this.txComentario.Frozen = true;
+            this.txComentario.HeaderText = "Comentario";
+            this.txComentario.Name = "txComentario";
+            this.txComentario.ReadOnly = true;
+            this.txComentario.Width = 250;
+            // 
+            // txCreado
+            // 
+            this.txCreado.Frozen = true;
+            this.txCreado.HeaderText = "Creado el día";
+            this.txCreado.Name = "txCreado";
+            this.txCreado.ReadOnly = true;
+            this.txCreado.Width = 250;
+            // 
+            // txIdPrueba
+            // 
+            this.txIdPrueba.Frozen = true;
+            this.txIdPrueba.HeaderText = "";
+            this.txIdPrueba.Name = "txIdPrueba";
+            this.txIdPrueba.ReadOnly = true;
+            this.txIdPrueba.Visible = false;
+            // 
+            // gridPruebActivas
+            // 
+            this.gridPruebActivas.ColumnHeadersHeight = 30;
+            this.gridPruebActivas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.gridPruebActivas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
+            this.gridPruebActivas.Location = new System.Drawing.Point(75, 34);
+            this.gridPruebActivas.Name = "gridPruebActivas";
+            this.gridPruebActivas.RowHeadersVisible = false;
+            this.gridPruebActivas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.gridPruebActivas.Size = new System.Drawing.Size(989, 228);
+            this.gridPruebActivas.TabIndex = 4;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.Frozen = true;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn1.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.Frozen = true;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Estado";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.Frozen = true;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Duración";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 160;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.Frozen = true;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Comentario";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 250;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.Frozen = true;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Creado el día";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 250;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.Frozen = true;
+            this.dataGridViewTextBoxColumn6.HeaderText = "";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Visible = false;
+            // 
+            // gridPruebCalif
+            // 
+            this.gridPruebCalif.ColumnHeadersHeight = 30;
+            this.gridPruebCalif.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.gridPruebCalif.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12});
+            this.gridPruebCalif.Location = new System.Drawing.Point(75, 34);
+            this.gridPruebCalif.Name = "gridPruebCalif";
+            this.gridPruebCalif.RowHeadersVisible = false;
+            this.gridPruebCalif.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.gridPruebCalif.Size = new System.Drawing.Size(989, 228);
+            this.gridPruebCalif.TabIndex = 5;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.Frozen = true;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn7.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.Frozen = true;
+            this.dataGridViewTextBoxColumn8.HeaderText = "Estado";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn8.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.Frozen = true;
+            this.dataGridViewTextBoxColumn9.HeaderText = "Duración";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 160;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.Frozen = true;
+            this.dataGridViewTextBoxColumn10.HeaderText = "Comentario";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 250;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.Frozen = true;
+            this.dataGridViewTextBoxColumn11.HeaderText = "Creado el día";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Width = 250;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.Frozen = true;
+            this.dataGridViewTextBoxColumn12.HeaderText = "";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Visible = false;
             // 
             // InicioProfe
             // 
@@ -228,13 +427,13 @@
             this.tabControl1.ResumeLayout(false);
             this.tabNotif.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabCursos.ResumeLayout(false);
             this.tabCursos.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPruebas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPruebActivas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPruebCalif)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,15 +447,33 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabNotif;
         private System.Windows.Forms.TabPage tabCursos;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox cbxCurso;
         private System.Windows.Forms.Label lblCurso;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView gridPruebas;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button bnBuscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txEstado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txDuracion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txComentario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txCreado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txIdPrueba;
+        private System.Windows.Forms.DataGridView gridPruebActivas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridView gridPruebCalif;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
     }
 }

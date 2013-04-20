@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130420200937) do
+ActiveRecord::Schema.define(:version => 20130420204615) do
 
   create_table "cursos", :force => true do |t|
     t.integer  "codigo"
@@ -78,5 +78,8 @@ ActiveRecord::Schema.define(:version => 20130420200937) do
     t.datetime "updated_at",    :null => false
     t.string   "calificacion"
   end
+
+  add_index "respuestas", ["estudiante_id"], :name => "index_respuestas_on_estudiante_id"
+  add_index "respuestas", ["prueba_id"], :name => "index_respuestas_on_prueba_id"
 
 end
