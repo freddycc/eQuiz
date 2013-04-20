@@ -9,7 +9,7 @@ namespace eQuiz
     {
         public Boolean crear(string nombre, string apellidos, string cedula, string usuario, string email, string pass)
         {
-            Boolean resultado = false;
+            Boolean resultado = true;
             string[] var = new string[6];
             string[] valor = new string[6];
             string url = "";
