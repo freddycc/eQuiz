@@ -1,0 +1,27 @@
+<h1>Listing respuesta</h1>
+
+<table>
+  <tr>
+    <th>Respuesta</th>
+    <th>Estudiante</th>
+    <th>Prueba</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @respuesta.each do |respuestum| %>
+  <tr>
+    <td><%= respuestum.respuesta %></td>
+    <td><%= respuestum.estudiante_id %></td>
+    <td><%= respuestum.prueba_id %></td>
+    <td><%= link_to 'Show', respuestum %></td>
+    <td><%= link_to 'Edit', edit_respuestum_path(respuestum) %></td>
+    <td><%= link_to 'Destroy', respuestum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Respuestum', new_respuestum_path %>

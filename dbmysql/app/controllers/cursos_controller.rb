@@ -2,7 +2,7 @@ class CursosController < ApplicationController
   # GET /cursos
   # GET /cursos.json
   def index
-    @cursos = Curso.all
+    @cursos = Curso.find_by_sql("SELECT c.id,c.codigo,c.nombre,c.descripcion,p.cedula FROM cursos as c, profesores as p WHERE c.profesore_id=p.id")#all
 
     respond_to do |format|
       if @cursos.empty?
@@ -25,6 +25,19 @@ class CursosController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @curso }
+    end
+  end
+
+  # GET /cursos/1/estudiantes.xml
+  def estudiantes
+    @curso = Curso.find(params[:id])
+    @estudiantes = @curso.estudiantes
+    respond_to do |format|
+      if @estudiantes.empty?
+        format.xml { head :no_content }
+      else
+         format.xml { render xml: @estudiantes }
+      end
     end
   end
 
@@ -51,6 +64,9 @@ class CursosController < ApplicationController
     @curso.codigo = params[:codigo]
     @curso.nombre = params[:nombre]
     @curso.descripcion = params[:descripcion]
+
+    @profesore = Profesore.find_by_cedula(params[:cedula])
+    @curso.profesore_id = @profesore.id
     respond_to do |format|
       if @curso.save
         format.html { redirect_to @curso, notice: 'Curso was successfully created.' }

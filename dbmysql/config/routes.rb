@@ -1,4 +1,10 @@
 Dbmysql::Application.routes.draw do
+  resources :matriculas
+
+
+  resources :respuesta
+
+
   resources :pruebas
 
 
@@ -17,6 +23,8 @@ Dbmysql::Application.routes.draw do
   #Actions of teachers
   match 'profesores/add' => 'profesores#add', :via => :post
 
+  #Actions of Cursos
+  match 'cursos/:id/estudiantes' => 'cursos#estudiantes', :via => :get
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

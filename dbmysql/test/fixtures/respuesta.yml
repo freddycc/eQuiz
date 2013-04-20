@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  respuesta: MyString
+  estudiante_id: 1
+  prueba_id: 1
+
+two:
+  respuesta: MyString
+  estudiante_id: 1
+  prueba_id: 1

@@ -36,6 +36,8 @@
             this.bnCancelar = new System.Windows.Forms.Button();
             this.bnCrear = new System.Windows.Forms.Button();
             this.txtCod = new System.Windows.Forms.NumericUpDown();
+            this.cbxProfe = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txtCod)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +46,7 @@
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(207, 104);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(209, 22);
+            this.txtNombre.Size = new System.Drawing.Size(229, 22);
             this.txtNombre.TabIndex = 21;
             // 
             // label5
@@ -82,7 +84,7 @@
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.Location = new System.Drawing.Point(207, 166);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(222, 155);
+            this.txtDescripcion.Size = new System.Drawing.Size(229, 155);
             this.txtDescripcion.TabIndex = 28;
             this.txtDescripcion.Text = "";
             // 
@@ -90,7 +92,7 @@
             // 
             this.bnCancelar.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.bnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnCancelar.Location = new System.Drawing.Point(278, 339);
+            this.bnCancelar.Location = new System.Drawing.Point(278, 398);
             this.bnCancelar.Name = "bnCancelar";
             this.bnCancelar.Size = new System.Drawing.Size(122, 36);
             this.bnCancelar.TabIndex = 30;
@@ -102,7 +104,7 @@
             // 
             this.bnCrear.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.bnCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnCrear.Location = new System.Drawing.Point(101, 339);
+            this.bnCrear.Location = new System.Drawing.Point(101, 398);
             this.bnCrear.Name = "bnCrear";
             this.bnCrear.Size = new System.Drawing.Size(122, 36);
             this.bnCrear.TabIndex = 29;
@@ -114,14 +116,35 @@
             // 
             this.txtCod.Location = new System.Drawing.Point(207, 49);
             this.txtCod.Name = "txtCod";
-            this.txtCod.Size = new System.Drawing.Size(209, 20);
+            this.txtCod.Size = new System.Drawing.Size(229, 20);
             this.txtCod.TabIndex = 31;
+            // 
+            // cbxProfe
+            // 
+            this.cbxProfe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxProfe.FormattingEnabled = true;
+            this.cbxProfe.Location = new System.Drawing.Point(207, 342);
+            this.cbxProfe.Name = "cbxProfe";
+            this.cbxProfe.Size = new System.Drawing.Size(229, 24);
+            this.cbxProfe.TabIndex = 32;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(84, 342);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 16);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Profesor";
             // 
             // FormNuevoCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(501, 393);
+            this.ClientSize = new System.Drawing.Size(501, 456);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cbxProfe);
             this.Controls.Add(this.txtCod);
             this.Controls.Add(this.bnCancelar);
             this.Controls.Add(this.bnCrear);
@@ -148,5 +171,7 @@
         private System.Windows.Forms.Button bnCancelar;
         private System.Windows.Forms.Button bnCrear;
         private System.Windows.Forms.NumericUpDown txtCod;
+        private System.Windows.Forms.ComboBox cbxProfe;
+        private System.Windows.Forms.Label label3;
     }
 }

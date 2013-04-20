@@ -2,16 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 
 namespace eQuiz
 {
     class Cursos
     {
-        public Boolean crear(string codigo, string nombre, string descripcion)
+        private HttpConexion ejecutar = new HttpConexion();
+        
+        public DataSet obtenerEstudiantes(string id)
+        {
+            string url = "http://localhost:3000/cursos/"+id+"/estudiantes.xml";
+            return ejecutar.ConvertXMLToDataSet(url);
+        }
+        public Boolean crear(string codigo, string nombre, string descripcion, string ced_profe)
         {
             Boolean resultado = true;
-            string[] var = new string[6];
-            string[] valor = new string[6];
+            string[] var = new string[4];
+            string[] valor = new string[4];
             string url = "";
             var[0] = "codigo";
             valor[0] = codigo;
@@ -19,14 +27,16 @@ namespace eQuiz
             valor[1] = nombre;
             var[2] = "descripcion";
             valor[2] = descripcion;
+            var[3] = "cedula";
+            valor[3] = ced_profe;
 
             url = "http://localhost:3000/cursos.json";
-            HttpConexion ejecutar = new HttpConexion();
+            
             if (ejecutar.HttpPost(url, var, valor, "POST").Equals(""))
                 resultado = false;
             return resultado;
         }
-        public Boolean edit(string codigo, string nombre, string descripcion, string id)
+        public Boolean edit(string codigo, string nombre, string descripcion, string id_profe, string id)
         {
             Boolean resultado = true;
             string[] var = new string[6];
@@ -39,9 +49,9 @@ namespace eQuiz
             var[2] = "descripcion";
             valor[2] = descripcion;
             url = "http://localhost:3000/cursos/" + id + ".json";
-            HttpConexion ejecutar = new HttpConexion();
+            
             if (ejecutar.HttpPost(url, var, valor, "PUT").Equals(""))
-                resultado = false;
+                resultado = true;
             return resultado;
         }
         public Boolean delete(string id)
@@ -53,7 +63,7 @@ namespace eQuiz
             valor[0] = id;
 
             string url = "http://localhost:3000/cursos/" + id + ".json";
-            HttpConexion ejecutar = new HttpConexion();
+            
             if (ejecutar.HttpPost(url, var, valor, "DELETE").Equals(""))
                 resultado = false;
             return resultado;

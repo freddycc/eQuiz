@@ -15,6 +15,7 @@ namespace eQuiz
         {
             InitializeComponent();
             this.actTabla();
+            this.bxCursos.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         public void actTabla()
@@ -44,12 +45,19 @@ namespace eQuiz
 
             resorce = con.ConvertXMLToDataSet("http://localhost:3000/cursos.xml");
             if(resorce!=null){
-                DataTable cursos = resorce.Tables[1];
+                DataTable cursos = resorce.Tables[1], cursosCombo = new DataTable();
                 this.gridCursos.Rows.Clear();
+                cursosCombo.Columns.Add("nombre", typeof(string));
+                cursosCombo.Columns.Add("id", typeof(string));
                 for (int i = 0; i <= cursos.Rows.Count - 1; i++)
                 {
-                    this.gridCursos.Rows.Add(resorce.Tables[2].Rows[i].ItemArray[1].ToString(), cursos.Rows[i].ItemArray[2].ToString(), cursos.Rows[i].ItemArray[1].ToString(), resorce.Tables[4].Rows[i].ItemArray[1].ToString());
+                    this.gridCursos.Rows.Add(resorce.Tables[3].Rows[i].ItemArray[1].ToString(), cursos.Rows[i].ItemArray[2].ToString(), cursos.Rows[i].ItemArray[1].ToString(), resorce.Tables[4].Rows[i].ItemArray[1].ToString(),resorce.Tables[2].Rows[i].ItemArray[1].ToString());
+                    cursosCombo.Rows.Add(cursos.Rows[i].ItemArray[2].ToString(), resorce.Tables[4].Rows[i].ItemArray[1].ToString());
                 }
+                this.bxCursos.DataSource = cursosCombo;
+                this.bxCursos.DisplayMember = "nombre";
+                this.bxCursos.ValueMember = "id";
+                this.bxCursos.SelectedIndex = 0;
             }
         }
 
@@ -151,6 +159,7 @@ namespace eQuiz
                     FormNuevoCurso edt = new FormNuevoCurso(this.gridCursos.Rows[row].Cells[0].Value + "",
                                                             this.gridCursos.Rows[row].Cells[1].Value + "",
                                                             this.gridCursos.Rows[row].Cells[2].Value + "",                                                            
+                                                            this.gridCursos.Rows[row].Cells["profCed"].Value+"",
                                                             id);
                     edt.Show();
                 }
@@ -164,6 +173,29 @@ namespace eQuiz
                     }
                 }
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            actTabla();
+        }        
+
+        private void bnMatriculados_Click(object sender, EventArgs e)
+        {
+            
+            Cursos curso = new Cursos();
+            string idcurso = this.bxCursos.SelectedValue.ToString();
+            DataSet resource = curso.obtenerEstudiantes(idcurso);
+            for (int i = 0; i <= resource.Tables[1].Rows.Count - 1; i++)
+            {
+                this.gridEstCurs.Rows.Add(resource.Tables[1].Rows[i].ItemArray[1].ToString(),
+                    resource.Tables[1].Rows[i].ItemArray[4].ToString(),
+                    resource.Tables[1].Rows[i].ItemArray[0].ToString(),
+                    resource.Tables[1].Rows[i].ItemArray[3].ToString(),
+                    resource.Tables[3].Rows[i].ItemArray[1].ToString());
+                this.gridEstCurs.Rows[i].Cells["bnAction"].Value = "Eliminar";
+            }
+
         }       
     }
 }

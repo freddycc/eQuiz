@@ -22,6 +22,12 @@ class PruebasController < ApplicationController
     end
   end
 
+  #GET /pruebas/getactivas.xml
+  def activas
+    @pruebas = Prueba.where(:estado => "activa")
+    
+  end
+
   # GET /pruebas/new
   # GET /pruebas/new.json
   def new

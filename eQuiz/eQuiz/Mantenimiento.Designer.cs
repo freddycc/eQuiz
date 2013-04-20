@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl = new System.Windows.Forms.TabControl();
+            this.components = new System.ComponentModel.Container();
+            this.Mantenimientos = new System.Windows.Forms.TabControl();
             this.tabEstud = new System.Windows.Forms.TabPage();
             this.bnCrearEstd = new System.Windows.Forms.Button();
             this.gridEstud = new System.Windows.Forms.DataGridView();
@@ -60,28 +61,47 @@
             this.nombreCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profCed = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editCurso = new System.Windows.Forms.DataGridViewButtonColumn();
             this.deletCurso = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.tabControl.SuspendLayout();
+            this.tabMatricula = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.bnMatriculados = new System.Windows.Forms.Button();
+            this.lblCursoFilt = new System.Windows.Forms.Label();
+            this.bxCursos = new System.Windows.Forms.ComboBox();
+            this.gridEstCurs = new System.Windows.Forms.DataGridView();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.txCedEst = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txNomEst = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txApEst = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txEmaEst = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idest = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bnAction = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Mantenimientos.SuspendLayout();
             this.tabEstud.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEstud)).BeginInit();
             this.tabProfes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProfes)).BeginInit();
             this.tabCursos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCursos)).BeginInit();
+            this.tabMatricula.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEstCurs)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl
+            // Mantenimientos
             // 
-            this.tabControl.Controls.Add(this.tabEstud);
-            this.tabControl.Controls.Add(this.tabProfes);
-            this.tabControl.Controls.Add(this.tabCursos);
-            this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl.Location = new System.Drawing.Point(45, 12);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1096, 565);
-            this.tabControl.TabIndex = 0;
+            this.Mantenimientos.Controls.Add(this.tabEstud);
+            this.Mantenimientos.Controls.Add(this.tabProfes);
+            this.Mantenimientos.Controls.Add(this.tabCursos);
+            this.Mantenimientos.Controls.Add(this.tabMatricula);
+            this.Mantenimientos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mantenimientos.Location = new System.Drawing.Point(45, 12);
+            this.Mantenimientos.Name = "Mantenimientos";
+            this.Mantenimientos.SelectedIndex = 0;
+            this.Mantenimientos.Size = new System.Drawing.Size(1245, 589);
+            this.Mantenimientos.TabIndex = 0;
             // 
             // tabEstud
             // 
@@ -90,9 +110,9 @@
             this.tabEstud.Location = new System.Drawing.Point(4, 25);
             this.tabEstud.Name = "tabEstud";
             this.tabEstud.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEstud.Size = new System.Drawing.Size(1088, 536);
+            this.tabEstud.Size = new System.Drawing.Size(1237, 560);
             this.tabEstud.TabIndex = 1;
-            this.tabEstud.Text = "Administrar Estudiantes";
+            this.tabEstud.Text = "Estudiantes";
             this.tabEstud.UseVisualStyleBackColor = true;
             // 
             // bnCrearEstd
@@ -125,11 +145,12 @@
             this.passEst,
             this.editEstud,
             this.elimEstud});
-            this.gridEstud.Location = new System.Drawing.Point(215, 134);
+            this.gridEstud.Location = new System.Drawing.Point(271, 89);
             this.gridEstud.Name = "gridEstud";
             this.gridEstud.ReadOnly = true;
+            this.gridEstud.RowHeadersVisible = false;
             this.gridEstud.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridEstud.Size = new System.Drawing.Size(843, 345);
+            this.gridEstud.Size = new System.Drawing.Size(803, 425);
             this.gridEstud.TabIndex = 0;
             this.gridEstud.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridEstud_CellContentClick);
             // 
@@ -205,9 +226,9 @@
             this.tabProfes.Location = new System.Drawing.Point(4, 25);
             this.tabProfes.Name = "tabProfes";
             this.tabProfes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProfes.Size = new System.Drawing.Size(1088, 536);
+            this.tabProfes.Size = new System.Drawing.Size(1237, 560);
             this.tabProfes.TabIndex = 2;
-            this.tabProfes.Text = "Administrar Profesores";
+            this.tabProfes.Text = "Profesores";
             this.tabProfes.UseVisualStyleBackColor = true;
             // 
             // bnCrearProf
@@ -238,10 +259,11 @@
             this.passProf,
             this.editProf,
             this.eliminProf});
-            this.gridProfes.Location = new System.Drawing.Point(216, 134);
+            this.gridProfes.Location = new System.Drawing.Point(263, 86);
             this.gridProfes.Name = "gridProfes";
+            this.gridProfes.RowHeadersVisible = false;
             this.gridProfes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridProfes.Size = new System.Drawing.Size(843, 345);
+            this.gridProfes.Size = new System.Drawing.Size(803, 432);
             this.gridProfes.TabIndex = 9;
             this.gridProfes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridProfes_CellContentClick);
             // 
@@ -318,9 +340,9 @@
             this.tabCursos.Location = new System.Drawing.Point(4, 25);
             this.tabCursos.Name = "tabCursos";
             this.tabCursos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCursos.Size = new System.Drawing.Size(1088, 536);
+            this.tabCursos.Size = new System.Drawing.Size(1237, 560);
             this.tabCursos.TabIndex = 3;
-            this.tabCursos.Text = "Administrar Cursos";
+            this.tabCursos.Text = "Cursos";
             this.tabCursos.UseVisualStyleBackColor = true;
             // 
             // bnCrearCurso
@@ -340,19 +362,23 @@
             // gridCursos
             // 
             this.gridCursos.AllowUserToAddRows = false;
+            this.gridCursos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.gridCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridCursos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codCurso,
             this.nombreCurso,
             this.descripCurso,
             this.idCurso,
+            this.profCed,
             this.editCurso,
             this.deletCurso});
-            this.gridCursos.Location = new System.Drawing.Point(217, 134);
+            this.gridCursos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.gridCursos.Location = new System.Drawing.Point(265, 90);
             this.gridCursos.Name = "gridCursos";
+            this.gridCursos.RowHeadersVisible = false;
             this.gridCursos.RowHeadersWidth = 100;
             this.gridCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCursos.Size = new System.Drawing.Size(702, 345);
+            this.gridCursos.Size = new System.Drawing.Size(703, 415);
             this.gridCursos.TabIndex = 11;
             this.gridCursos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCursos_CellContentClick);
             // 
@@ -384,6 +410,13 @@
             this.idCurso.Name = "idCurso";
             this.idCurso.ReadOnly = true;
             // 
+            // profCed
+            // 
+            this.profCed.Frozen = true;
+            this.profCed.HeaderText = "Cedula del Profesor";
+            this.profCed.Name = "profCed";
+            this.profCed.ReadOnly = true;
+            // 
             // editCurso
             // 
             this.editCurso.Frozen = true;
@@ -402,29 +435,163 @@
             this.deletCurso.Text = "Eliminar";
             this.deletCurso.UseColumnTextForButtonValue = true;
             // 
+            // tabMatricula
+            // 
+            this.tabMatricula.Controls.Add(this.groupBox1);
+            this.tabMatricula.Controls.Add(this.lblCursoFilt);
+            this.tabMatricula.Controls.Add(this.bxCursos);
+            this.tabMatricula.Controls.Add(this.gridEstCurs);
+            this.tabMatricula.Location = new System.Drawing.Point(4, 25);
+            this.tabMatricula.Name = "tabMatricula";
+            this.tabMatricula.Padding = new System.Windows.Forms.Padding(3);
+            this.tabMatricula.Size = new System.Drawing.Size(1237, 560);
+            this.tabMatricula.TabIndex = 5;
+            this.tabMatricula.Text = "Administrar Matriculas";
+            this.tabMatricula.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.bnMatriculados);
+            this.groupBox1.Location = new System.Drawing.Point(24, 145);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(269, 158);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Opciones de Tabla";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(15, 102);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(240, 36);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Listar estudiantes no matriculados";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // bnMatriculados
+            // 
+            this.bnMatriculados.Location = new System.Drawing.Point(15, 39);
+            this.bnMatriculados.Name = "bnMatriculados";
+            this.bnMatriculados.Size = new System.Drawing.Size(240, 36);
+            this.bnMatriculados.TabIndex = 4;
+            this.bnMatriculados.Text = "Listar estudiantes matriculados";
+            this.bnMatriculados.UseVisualStyleBackColor = true;
+            this.bnMatriculados.Click += new System.EventHandler(this.bnMatriculados_Click);
+            // 
+            // lblCursoFilt
+            // 
+            this.lblCursoFilt.AutoSize = true;
+            this.lblCursoFilt.Location = new System.Drawing.Point(36, 61);
+            this.lblCursoFilt.Name = "lblCursoFilt";
+            this.lblCursoFilt.Size = new System.Drawing.Size(43, 16);
+            this.lblCursoFilt.TabIndex = 3;
+            this.lblCursoFilt.Text = "Curso";
+            // 
+            // bxCursos
+            // 
+            this.bxCursos.FormattingEnabled = true;
+            this.bxCursos.Location = new System.Drawing.Point(100, 58);
+            this.bxCursos.Name = "bxCursos";
+            this.bxCursos.Size = new System.Drawing.Size(179, 24);
+            this.bxCursos.TabIndex = 2;
+            // 
+            // gridEstCurs
+            // 
+            this.gridEstCurs.AllowUserToAddRows = false;
+            this.gridEstCurs.AllowUserToDeleteRows = false;
+            this.gridEstCurs.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.gridEstCurs.ColumnHeadersHeight = 40;
+            this.gridEstCurs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.txCedEst,
+            this.txNomEst,
+            this.txApEst,
+            this.txEmaEst,
+            this.idest,
+            this.bnAction});
+            this.gridEstCurs.Location = new System.Drawing.Point(335, 42);
+            this.gridEstCurs.Name = "gridEstCurs";
+            this.gridEstCurs.ReadOnly = true;
+            this.gridEstCurs.RowHeadersVisible = false;
+            this.gridEstCurs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridEstCurs.Size = new System.Drawing.Size(505, 478);
+            this.gridEstCurs.TabIndex = 1;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // txCedEst
+            // 
+            this.txCedEst.HeaderText = "Cédula";
+            this.txCedEst.Name = "txCedEst";
+            this.txCedEst.ReadOnly = true;
+            this.txCedEst.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // txNomEst
+            // 
+            this.txNomEst.HeaderText = "Nombre";
+            this.txNomEst.Name = "txNomEst";
+            this.txNomEst.ReadOnly = true;
+            this.txNomEst.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // txApEst
+            // 
+            this.txApEst.HeaderText = "Apellidos";
+            this.txApEst.Name = "txApEst";
+            this.txApEst.ReadOnly = true;
+            this.txApEst.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // txEmaEst
+            // 
+            this.txEmaEst.HeaderText = "Email";
+            this.txEmaEst.Name = "txEmaEst";
+            this.txEmaEst.ReadOnly = true;
+            this.txEmaEst.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // idest
+            // 
+            this.idest.HeaderText = "";
+            this.idest.Name = "idest";
+            this.idest.ReadOnly = true;
+            this.idest.Visible = false;
+            // 
+            // bnAction
+            // 
+            this.bnAction.HeaderText = "";
+            this.bnAction.Name = "bnAction";
+            this.bnAction.ReadOnly = true;
+            this.bnAction.Text = "papa";
+            this.bnAction.UseColumnTextForButtonValue = true;
+            // 
             // Mantenimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1176, 599);
-            this.Controls.Add(this.tabControl);
+            this.ClientSize = new System.Drawing.Size(1314, 626);
+            this.Controls.Add(this.Mantenimientos);
             this.Name = "Mantenimiento";
             this.Text = "Inicio";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Mantenimiento_FormClosed);
-            this.tabControl.ResumeLayout(false);
+            this.Mantenimientos.ResumeLayout(false);
             this.tabEstud.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridEstud)).EndInit();
             this.tabProfes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridProfes)).EndInit();
             this.tabCursos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridCursos)).EndInit();
+            this.tabMatricula.ResumeLayout(false);
+            this.tabMatricula.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridEstCurs)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabControl Mantenimientos;
         private System.Windows.Forms.TabPage tabEstud;
         private System.Windows.Forms.DataGridView gridEstud;
         private System.Windows.Forms.TabPage tabProfes;
@@ -452,11 +619,26 @@
         private System.Windows.Forms.TabPage tabCursos;
         private System.Windows.Forms.Button bnCrearCurso;
         private System.Windows.Forms.DataGridView gridCursos;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TabPage tabMatricula;
+        private System.Windows.Forms.DataGridView gridEstCurs;
         private System.Windows.Forms.DataGridViewTextBoxColumn codCurso;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreCurso;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripCurso;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCurso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn profCed;
         private System.Windows.Forms.DataGridViewButtonColumn editCurso;
         private System.Windows.Forms.DataGridViewButtonColumn deletCurso;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button bnMatriculados;
+        private System.Windows.Forms.Label lblCursoFilt;
+        private System.Windows.Forms.ComboBox bxCursos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txCedEst;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txNomEst;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txApEst;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txEmaEst;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idest;
+        private System.Windows.Forms.DataGridViewButtonColumn bnAction;
     }
 }

@@ -27,7 +27,7 @@ class EstudiantesController < ApplicationController
       format.json { render json: @estudiante }
     end
   end
-
+  
   # GET /estudiantes/new
   # GET /estudiantes/new.json
   def new
