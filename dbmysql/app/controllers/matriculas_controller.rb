@@ -41,6 +41,8 @@ class MatriculasController < ApplicationController
   # POST /matriculas.json
   def create
     @matricula = Matricula.new(params[:matricula])
+    @matricula.curso_id = params[:curso_id]
+    @matricula.estudiante_id = params[:estudiante_id]
 
     respond_to do |format|
       if @matricula.save
@@ -48,7 +50,7 @@ class MatriculasController < ApplicationController
         format.json { render json: @matricula, status: :created, location: @matricula }
       else
         format.html { render action: "new" }
-        format.json { render json: @matricula.errors, status: :unprocessable_entity }
+        format.json { head :no_content }
       end
     end
   end

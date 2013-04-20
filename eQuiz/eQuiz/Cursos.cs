@@ -15,6 +15,14 @@ namespace eQuiz
             string url = "http://localhost:3000/cursos/"+id+"/estudiantes.xml";
             return ejecutar.ConvertXMLToDataSet(url);
         }
+
+        public DataSet obtenerNoEstudiantes(string id)
+        {
+
+            string url = "http://localhost:3000/cursos/"+id+"/noestudiantes.xml";
+            return ejecutar.ConvertXMLToDataSet(url);
+        }
+
         public Boolean crear(string codigo, string nombre, string descripcion, string ced_profe)
         {
             Boolean resultado = true;

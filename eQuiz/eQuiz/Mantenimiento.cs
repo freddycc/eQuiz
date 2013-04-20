@@ -186,16 +186,96 @@ namespace eQuiz
             Cursos curso = new Cursos();
             string idcurso = this.bxCursos.SelectedValue.ToString();
             DataSet resource = curso.obtenerEstudiantes(idcurso);
-            for (int i = 0; i <= resource.Tables[1].Rows.Count - 1; i++)
+            this.gridEstCurs.Rows.Clear();
+            if (resource != null)
             {
-                this.gridEstCurs.Rows.Add(resource.Tables[1].Rows[i].ItemArray[1].ToString(),
-                    resource.Tables[1].Rows[i].ItemArray[4].ToString(),
-                    resource.Tables[1].Rows[i].ItemArray[0].ToString(),
-                    resource.Tables[1].Rows[i].ItemArray[3].ToString(),
-                    resource.Tables[3].Rows[i].ItemArray[1].ToString());
-                this.gridEstCurs.Rows[i].Cells["bnAction"].Value = "Eliminar";
-            }
+                for (int i = 0; i <= resource.Tables[1].Rows.Count - 1; i++)
+                {
+                    this.gridEstCurs.Rows.Add(resource.Tables[1].Rows[i].ItemArray[1].ToString(),
+                        resource.Tables[1].Rows[i].ItemArray[4].ToString(),
+                        resource.Tables[1].Rows[i].ItemArray[0].ToString(),
+                        resource.Tables[1].Rows[i].ItemArray[3].ToString(),
+                        resource.Tables[3].Rows[i].ItemArray[1].ToString(), "Eliminar");
 
-        }       
+                }
+            }
+        }
+
+        private void bnNoMatriculados_Click(object sender, EventArgs e)
+        {
+            Cursos curso = new Cursos();
+            this.gridEstCurs.Rows.Clear();
+            string idcurso = this.bxCursos.SelectedValue.ToString();
+            DataSet resource = curso.obtenerNoEstudiantes(idcurso);
+            if (resource != null)
+            {
+                if (resource.Tables.Count < 7)
+                {
+                    for (int i = 0; i <= resource.Tables[1].Rows.Count - 1; i++)
+                    {
+                        if (resource.Tables[2].Rows[i].ItemArray[0].Equals("true"))
+                        {
+                        }
+                        else
+                        {
+                            this.gridEstCurs.Rows.Add(resource.Tables[1].Rows[i].ItemArray[1].ToString(),
+                                resource.Tables[1].Rows[i].ItemArray[4].ToString(),
+                                resource.Tables[1].Rows[i].ItemArray[0].ToString(),
+                                resource.Tables[1].Rows[i].ItemArray[3].ToString(),
+                                resource.Tables[3].Rows[i].ItemArray[1].ToString(), "Agregar");
+
+                        }
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i <= resource.Tables[1].Rows.Count - 1; i++)
+                    {
+                        if (resource.Tables[2].Rows[i].ItemArray[0].Equals("true"))
+                        {
+                        }
+                        else
+                        {
+                            this.gridEstCurs.Rows.Add(resource.Tables[3].Rows[i].ItemArray[1].ToString(),
+                                resource.Tables[7].Rows[i].ItemArray[1].ToString(),
+                                resource.Tables[2].Rows[i].ItemArray[1].ToString(),
+                                resource.Tables[5].Rows[i].ItemArray[1].ToString(),
+                                resource.Tables[6].Rows[i].ItemArray[2].ToString(), "Agregar");
+
+                        }
+                    }
+                }
+            }
+        }
+
+        private void gridEstCurs_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Matriculas matr = new Matriculas();
+            string accion = this.gridEstCurs.CurrentCell.Value.ToString();
+            if (accion.Equals("Eliminar") || accion.Equals("Agregar"))
+            {
+                int row = Convert.ToInt32(this.gridEstCurs.CurrentRow.Index);
+                string estudiante_id = this.gridEstCurs.Rows[row].Cells[4].Value + "",
+                    curso_id = this.bxCursos.SelectedValue.ToString(); ;
+                
+                if(accion.Equals("Eliminar"))
+                {
+                    if(matr.delMatricula(curso_id,estudiante_id)){
+                        MessageBox.Show("Estudiante eliminado correctamente");
+                        this.gridEstCurs.Rows.RemoveAt(this.gridEstCurs.CurrentRow.Index);
+                    }
+                    else{
+                    }
+                }
+                else
+                {
+                    if(matr.creaMatricula(curso_id,estudiante_id)){
+                        MessageBox.Show("Estudiante agregado correctamente");
+                        this.gridEstCurs.Rows.RemoveAt(this.gridEstCurs.CurrentRow.Index);
+                    }
+                    else{}
+                }
+            }
+        }               
     }
 }

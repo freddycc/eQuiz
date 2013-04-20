@@ -66,7 +66,7 @@
             this.deletCurso = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabMatricula = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.bnNoMatriculados = new System.Windows.Forms.Button();
             this.bnMatriculados = new System.Windows.Forms.Button();
             this.lblCursoFilt = new System.Windows.Forms.Label();
             this.bxCursos = new System.Windows.Forms.ComboBox();
@@ -77,7 +77,7 @@
             this.txApEst = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txEmaEst = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idest = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bnAction = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.lblAction = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Mantenimientos.SuspendLayout();
             this.tabEstud.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEstud)).BeginInit();
@@ -451,7 +451,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.bnNoMatriculados);
             this.groupBox1.Controls.Add(this.bnMatriculados);
             this.groupBox1.Location = new System.Drawing.Point(24, 145);
             this.groupBox1.Name = "groupBox1";
@@ -460,14 +460,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opciones de Tabla";
             // 
-            // button2
+            // bnNoMatriculados
             // 
-            this.button2.Location = new System.Drawing.Point(15, 102);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(240, 36);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Listar estudiantes no matriculados";
-            this.button2.UseVisualStyleBackColor = true;
+            this.bnNoMatriculados.Location = new System.Drawing.Point(15, 102);
+            this.bnNoMatriculados.Name = "bnNoMatriculados";
+            this.bnNoMatriculados.Size = new System.Drawing.Size(240, 36);
+            this.bnNoMatriculados.TabIndex = 5;
+            this.bnNoMatriculados.Text = "Listar estudiantes no matriculados";
+            this.bnNoMatriculados.UseVisualStyleBackColor = true;
+            this.bnNoMatriculados.Click += new System.EventHandler(this.bnNoMatriculados_Click);
             // 
             // bnMatriculados
             // 
@@ -508,7 +509,7 @@
             this.txApEst,
             this.txEmaEst,
             this.idest,
-            this.bnAction});
+            this.lblAction});
             this.gridEstCurs.Location = new System.Drawing.Point(335, 42);
             this.gridEstCurs.Name = "gridEstCurs";
             this.gridEstCurs.ReadOnly = true;
@@ -516,6 +517,7 @@
             this.gridEstCurs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridEstCurs.Size = new System.Drawing.Size(505, 478);
             this.gridEstCurs.TabIndex = 1;
+            this.gridEstCurs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridEstCurs_CellContentClick);
             // 
             // timer1
             // 
@@ -557,13 +559,11 @@
             this.idest.ReadOnly = true;
             this.idest.Visible = false;
             // 
-            // bnAction
+            // lblAction
             // 
-            this.bnAction.HeaderText = "";
-            this.bnAction.Name = "bnAction";
-            this.bnAction.ReadOnly = true;
-            this.bnAction.Text = "papa";
-            this.bnAction.UseColumnTextForButtonValue = true;
+            this.lblAction.HeaderText = "Acción";
+            this.lblAction.Name = "lblAction";
+            this.lblAction.ReadOnly = true;
             // 
             // Mantenimiento
             // 
@@ -630,7 +630,7 @@
         private System.Windows.Forms.DataGridViewButtonColumn editCurso;
         private System.Windows.Forms.DataGridViewButtonColumn deletCurso;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button bnNoMatriculados;
         private System.Windows.Forms.Button bnMatriculados;
         private System.Windows.Forms.Label lblCursoFilt;
         private System.Windows.Forms.ComboBox bxCursos;
@@ -639,6 +639,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn txApEst;
         private System.Windows.Forms.DataGridViewTextBoxColumn txEmaEst;
         private System.Windows.Forms.DataGridViewTextBoxColumn idest;
-        private System.Windows.Forms.DataGridViewButtonColumn bnAction;
+        private System.Windows.Forms.DataGridViewLinkColumn lblAction;
     }
 }

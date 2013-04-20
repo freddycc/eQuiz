@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(:version => 20130415034235) do
     t.string   "email"
     t.string   "cedula"
     t.string   "nombre"
-    t.string   "apellido"
+    t.string   "apellidos"
     t.string   "password"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

@@ -41,6 +41,45 @@ class CursosController < ApplicationController
     end
   end
 
+  # GET /cursos/1/noestudiantes.xml
+  def noestudiantes
+    @curso = Curso.find(params[:id])
+    @matriculados = @curso.estudiantes
+    @estudiantes = Estudiante.all
+    if @matriculados.empty?
+      respond_to do |format|
+        if @estudiantes.empty?
+          format.xml { head :no_content }
+        else
+          format.xml { render xml: @estudiantes }
+        end
+      end
+    else
+      @matriculados.each do |matriculado|
+        @estudiantes.each do |estudiante|
+          if matriculado.id==estudiante.id
+            estudiante.id = nil
+            estudiante.nombre = nil
+            estudiante.cedula = nil
+            estudiante.apellidos = nil
+            estudiante.email = nil
+            estudiante.username = nil
+            estudiante.password = nil
+            estudiante.created_at = nil
+            estudiante.updated_at = nil
+          end
+        end
+      end
+      respond_to do |format|
+        if @estudiantes.empty?
+          format.xml { head :no_content }
+        else
+          format.xml { render xml: @estudiantes }
+        end      
+      end
+    end    
+  end
+
   # GET /cursos/new
   # GET /cursos/new.json
   def new
@@ -102,6 +141,18 @@ class CursosController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to cursos_url }
+      format.json { head :no_content }
+    end
+  end
+
+  # DELETE /cursos/1/1/delmatricula.json
+  def delmatricula
+    @curso = Curso.find(params[:curso_id])
+    @matriculados = @curso.estudiantes
+    @estudiante = Estudiante.find(params[:estudiante_id])
+    @matriculados.delete(@estudiante)
+
+    respond_to do |format|
       format.json { head :no_content }
     end
   end
