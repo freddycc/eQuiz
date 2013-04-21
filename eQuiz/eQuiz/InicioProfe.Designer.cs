@@ -62,6 +62,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.lblCurso = new System.Windows.Forms.Label();
             this.cbxCurso = new System.Windows.Forms.ComboBox();
+            this.bnBuscarAct = new System.Windows.Forms.Button();
+            this.cbxCurs = new System.Windows.Forms.ComboBox();
+            this.lblcbxCurs = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabNotif.SuspendLayout();
@@ -202,10 +205,13 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.bnBuscarAct);
+            this.groupBox2.Controls.Add(this.cbxCurs);
+            this.groupBox2.Controls.Add(this.lblcbxCurs);
             this.groupBox2.Controls.Add(this.gridPruebActivas);
-            this.groupBox2.Location = new System.Drawing.Point(47, 11);
+            this.groupBox2.Location = new System.Drawing.Point(25, 11);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1137, 268);
+            this.groupBox2.Size = new System.Drawing.Size(1159, 268);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pruebas Activas";
@@ -221,7 +227,7 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
-            this.gridPruebActivas.Location = new System.Drawing.Point(75, 34);
+            this.gridPruebActivas.Location = new System.Drawing.Point(164, 34);
             this.gridPruebActivas.Name = "gridPruebActivas";
             this.gridPruebActivas.RowHeadersVisible = false;
             this.gridPruebActivas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
@@ -412,6 +418,33 @@
             this.cbxCurso.Size = new System.Drawing.Size(167, 26);
             this.cbxCurso.TabIndex = 0;
             // 
+            // bnBuscarAct
+            // 
+            this.bnBuscarAct.Location = new System.Drawing.Point(22, 87);
+            this.bnBuscarAct.Name = "bnBuscarAct";
+            this.bnBuscarAct.Size = new System.Drawing.Size(121, 27);
+            this.bnBuscarAct.TabIndex = 10;
+            this.bnBuscarAct.Text = "Buscar Activas";
+            this.bnBuscarAct.UseVisualStyleBackColor = true;
+            this.bnBuscarAct.Click += new System.EventHandler(this.bnBuscarAct_Click);
+            // 
+            // cbxCurs
+            // 
+            this.cbxCurs.FormattingEnabled = true;
+            this.cbxCurs.Location = new System.Drawing.Point(22, 55);
+            this.cbxCurs.Name = "cbxCurs";
+            this.cbxCurs.Size = new System.Drawing.Size(121, 26);
+            this.cbxCurs.TabIndex = 9;
+            // 
+            // lblcbxCurs
+            // 
+            this.lblcbxCurs.AutoSize = true;
+            this.lblcbxCurs.Location = new System.Drawing.Point(19, 34);
+            this.lblcbxCurs.Name = "lblcbxCurs";
+            this.lblcbxCurs.Size = new System.Drawing.Size(126, 18);
+            this.lblcbxCurs.TabIndex = 8;
+            this.lblcbxCurs.Text = "Seleccione Curso";
+            // 
             // InicioProfe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -430,6 +463,7 @@
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridPruebCalif)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPruebActivas)).EndInit();
             this.tabCursos.ResumeLayout(false);
             this.tabCursos.PerformLayout();
@@ -476,5 +510,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.Button bnBuscarAct;
+        private System.Windows.Forms.ComboBox cbxCurs;
+        private System.Windows.Forms.Label lblcbxCurs;
     }
 }
