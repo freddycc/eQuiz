@@ -39,7 +39,7 @@ namespace eQuiz
                 this.cbxCurso.SelectedIndex = 0;
             }
 
-            resorce = con.ConvertXMLToDataSet("http://localhost:3000/profesores/12/activas.xml");
+            //resorce = con.ConvertXMLToDataSet("http://localhost:3000/profesores/12/activas.xml");
             if (resorce != null) 
             {
 
