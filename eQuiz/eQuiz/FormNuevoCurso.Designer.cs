@@ -154,6 +154,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormNuevoCurso";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormNuevoCurso";
             ((System.ComponentModel.ISupportInitialize)(this.txtCod)).EndInit();
             this.ResumeLayout(false);

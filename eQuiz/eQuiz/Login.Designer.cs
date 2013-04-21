@@ -41,6 +41,7 @@
             this.txtContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContrasena.Location = new System.Drawing.Point(212, 138);
             this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.PasswordChar = '*';
             this.txtContrasena.Size = new System.Drawing.Size(179, 22);
             this.txtContrasena.TabIndex = 11;
             // 
@@ -116,6 +117,7 @@
             this.Controls.Add(this.bnCancelar);
             this.Controls.Add(this.bnIniciar);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de Sesion";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -71,13 +71,13 @@
             this.lblCursoFilt = new System.Windows.Forms.Label();
             this.bxCursos = new System.Windows.Forms.ComboBox();
             this.gridEstCurs = new System.Windows.Forms.DataGridView();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.txCedEst = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txNomEst = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txApEst = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txEmaEst = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idest = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblAction = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Mantenimientos.SuspendLayout();
             this.tabEstud.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEstud)).BeginInit();
@@ -519,11 +519,6 @@
             this.gridEstCurs.TabIndex = 1;
             this.gridEstCurs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridEstCurs_CellContentClick);
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 5000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // txCedEst
             // 
             this.txCedEst.HeaderText = "Cédula";
@@ -565,6 +560,11 @@
             this.lblAction.Name = "lblAction";
             this.lblAction.ReadOnly = true;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Mantenimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -572,6 +572,7 @@
             this.ClientSize = new System.Drawing.Size(1314, 626);
             this.Controls.Add(this.Mantenimientos);
             this.Name = "Mantenimiento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Mantenimiento_FormClosed);
             this.Mantenimientos.ResumeLayout(false);
