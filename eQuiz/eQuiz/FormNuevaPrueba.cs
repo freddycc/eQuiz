@@ -14,6 +14,9 @@ namespace eQuiz
         public FormNuevaPrueba()
         {
             InitializeComponent();
+            this.cbxEstado.Items.Add("activa");
+            this.cbxEstado.Items.Add("incativa");
+            this.cbxEstado.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void FormNuevaPrueba_Load(object sender, EventArgs e)
