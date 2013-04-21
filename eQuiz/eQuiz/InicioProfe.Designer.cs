@@ -44,15 +44,12 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gridPruebActivas = new System.Windows.Forms.DataGridView();
 <<<<<<< HEAD
-<<<<<<< HEAD
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-=======
->>>>>>> f33d2ea6b2f143865a186ac1774059cdd96fe28c
 =======
 >>>>>>> f33d2ea6b2f143865a186ac1774059cdd96fe28c
             this.tabCursos = new System.Windows.Forms.TabPage();
@@ -69,10 +66,7 @@
             this.lblCurso = new System.Windows.Forms.Label();
             this.cbxCurso = new System.Windows.Forms.ComboBox();
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
-=======
->>>>>>> f33d2ea6b2f143865a186ac1774059cdd96fe28c
             this.lblcbxCurs = new System.Windows.Forms.Label();
             this.cbxCurs = new System.Windows.Forms.ComboBox();
             this.bnBuscarAct = new System.Windows.Forms.Button();
@@ -82,9 +76,6 @@
             this.txComActivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txCreActivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txIdActivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-<<<<<<< HEAD
->>>>>>> f33d2ea6b2f143865a186ac1774059cdd96fe28c
-=======
 >>>>>>> f33d2ea6b2f143865a186ac1774059cdd96fe28c
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -243,7 +234,6 @@
             this.gridPruebActivas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gridPruebActivas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
 <<<<<<< HEAD
-<<<<<<< HEAD
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -252,8 +242,6 @@
             this.dataGridViewTextBoxColumn6});
             this.gridPruebActivas.Location = new System.Drawing.Point(75, 34);
 =======
-=======
->>>>>>> f33d2ea6b2f143865a186ac1774059cdd96fe28c
             this.txNomActivo,
             this.txEstActivo,
             this.txDurActivo,
@@ -261,9 +249,6 @@
             this.txCreActivo,
             this.txIdActivo});
             this.gridPruebActivas.Location = new System.Drawing.Point(142, 34);
-<<<<<<< HEAD
->>>>>>> f33d2ea6b2f143865a186ac1774059cdd96fe28c
-=======
 >>>>>>> f33d2ea6b2f143865a186ac1774059cdd96fe28c
             this.gridPruebActivas.Name = "gridPruebActivas";
             this.gridPruebActivas.RowHeadersVisible = false;
@@ -271,7 +256,6 @@
             this.gridPruebActivas.Size = new System.Drawing.Size(989, 228);
             this.gridPruebActivas.TabIndex = 4;
             // 
-<<<<<<< HEAD
 <<<<<<< HEAD
             // dataGridViewTextBoxColumn1
             // 
@@ -323,8 +307,6 @@
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Visible = false;
             // 
-=======
->>>>>>> f33d2ea6b2f143865a186ac1774059cdd96fe28c
 =======
 >>>>>>> f33d2ea6b2f143865a186ac1774059cdd96fe28c
             // tabCursos
@@ -434,7 +416,6 @@
             // 
             // button1
 <<<<<<< HEAD
-<<<<<<< HEAD
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(39, 34);
@@ -562,115 +543,11 @@
             // 
             // txIdActivo
             // 
-=======
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(39, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 36);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Nueva Prueva";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // lblCurso
-            // 
-            this.lblCurso.AutoSize = true;
-            this.lblCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurso.Location = new System.Drawing.Point(72, 39);
-            this.lblCurso.Name = "lblCurso";
-            this.lblCurso.Size = new System.Drawing.Size(53, 18);
-            this.lblCurso.TabIndex = 1;
-            this.lblCurso.Text = "Curso:";
-            // 
-            // cbxCurso
-            // 
-            this.cbxCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxCurso.FormattingEnabled = true;
-            this.cbxCurso.Location = new System.Drawing.Point(214, 31);
-            this.cbxCurso.Name = "cbxCurso";
-            this.cbxCurso.Size = new System.Drawing.Size(167, 26);
-            this.cbxCurso.TabIndex = 0;
-            // 
-            // lblcbxCurs
-            // 
-            this.lblcbxCurs.AutoSize = true;
-            this.lblcbxCurs.Location = new System.Drawing.Point(10, 44);
-            this.lblcbxCurs.Name = "lblcbxCurs";
-            this.lblcbxCurs.Size = new System.Drawing.Size(126, 18);
-            this.lblcbxCurs.TabIndex = 5;
-            this.lblcbxCurs.Text = "Seleccione Curso";
-            // 
-            // cbxCurs
-            // 
-            this.cbxCurs.FormattingEnabled = true;
-            this.cbxCurs.Location = new System.Drawing.Point(13, 65);
-            this.cbxCurs.Name = "cbxCurs";
-            this.cbxCurs.Size = new System.Drawing.Size(121, 26);
-            this.cbxCurs.TabIndex = 6;
-            // 
-            // bnBuscarAct
-            // 
-            this.bnBuscarAct.Location = new System.Drawing.Point(13, 97);
-            this.bnBuscarAct.Name = "bnBuscarAct";
-            this.bnBuscarAct.Size = new System.Drawing.Size(121, 27);
-            this.bnBuscarAct.TabIndex = 7;
-            this.bnBuscarAct.Text = "Buscar Activas";
-            this.bnBuscarAct.UseVisualStyleBackColor = true;
-            this.bnBuscarAct.Click += new System.EventHandler(this.bnBuscarAct_Click);
-            // 
-            // txNomActivo
-            // 
-            this.txNomActivo.Frozen = true;
-            this.txNomActivo.HeaderText = "Nombre";
-            this.txNomActivo.Name = "txNomActivo";
-            this.txNomActivo.ReadOnly = true;
-            this.txNomActivo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.txNomActivo.Width = 180;
-            // 
-            // txEstActivo
-            // 
-            this.txEstActivo.Frozen = true;
-            this.txEstActivo.HeaderText = "Estado";
-            this.txEstActivo.Name = "txEstActivo";
-            this.txEstActivo.ReadOnly = true;
-            this.txEstActivo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.txEstActivo.Width = 150;
-            // 
-            // txDurActivo
-            // 
-            this.txDurActivo.Frozen = true;
-            this.txDurActivo.HeaderText = "Duración";
-            this.txDurActivo.Name = "txDurActivo";
-            this.txDurActivo.ReadOnly = true;
-            this.txDurActivo.Width = 160;
-            // 
-            // txComActivo
-            // 
-            this.txComActivo.Frozen = true;
-            this.txComActivo.HeaderText = "Comentario";
-            this.txComActivo.Name = "txComActivo";
-            this.txComActivo.ReadOnly = true;
-            this.txComActivo.Width = 250;
-            // 
-            // txCreActivo
-            // 
-            this.txCreActivo.Frozen = true;
-            this.txCreActivo.HeaderText = "Creado el día";
-            this.txCreActivo.Name = "txCreActivo";
-            this.txCreActivo.ReadOnly = true;
-            this.txCreActivo.Width = 250;
-            // 
-            // txIdActivo
-            // 
->>>>>>> f33d2ea6b2f143865a186ac1774059cdd96fe28c
             this.txIdActivo.Frozen = true;
             this.txIdActivo.HeaderText = "";
             this.txIdActivo.Name = "txIdActivo";
             this.txIdActivo.ReadOnly = true;
             this.txIdActivo.Visible = false;
-<<<<<<< HEAD
->>>>>>> f33d2ea6b2f143865a186ac1774059cdd96fe28c
-=======
 >>>>>>> f33d2ea6b2f143865a186ac1774059cdd96fe28c
             // 
             // InicioProfe
@@ -692,10 +569,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridPruebCalif)).EndInit();
             this.groupBox2.ResumeLayout(false);
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
-            this.groupBox2.PerformLayout();
->>>>>>> f33d2ea6b2f143865a186ac1774059cdd96fe28c
 =======
             this.groupBox2.PerformLayout();
 >>>>>>> f33d2ea6b2f143865a186ac1774059cdd96fe28c
