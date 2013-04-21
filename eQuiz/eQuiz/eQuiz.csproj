@@ -72,6 +72,12 @@
       <DependentUpon>FormNuevoProf.cs</DependentUpon>
     </Compile>
     <Compile Include="HttpConexion.cs" />
+    <Compile Include="inicioEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inicioEstudiantes.Designer.cs">
+      <DependentUpon>inicioEstudiantes.cs</DependentUpon>
+    </Compile>
     <Compile Include="InicioProfe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormNuevoProf.resx">
       <DependentUpon>FormNuevoProf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inicioEstudiantes.resx">
+      <DependentUpon>inicioEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InicioProfe.resx">
       <DependentUpon>InicioProfe.cs</DependentUpon>
