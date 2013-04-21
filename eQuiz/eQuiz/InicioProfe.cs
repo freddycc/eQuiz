@@ -55,7 +55,7 @@ namespace eQuiz
         {
             Cursos curso = new Cursos();
             this.gridPruebas.Rows.Clear();
-            string curso_id = this.cbxCurso.SelectedValue.ToString();
+            string curso_id = this.cbxCurs.SelectedValue.ToString();
             DataSet resource = curso.obtenerPruebas(curso_id);
             if (resource != null)
             {
@@ -73,9 +73,12 @@ namespace eQuiz
 
         private void bnBuscarAct_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+            this.cargaratvias();
+=======
             Cursos curso = new Cursos();
             this.gridPruebActivas.Rows.Clear();
-            string curso_id = this.cbxCurso.SelectedValue.ToString();
+            string curso_id = this.cbxCurs.SelectedValue.ToString();
             DataSet resource = curso.obtenerPruebInactivas(curso_id);
             if (resource != null)
             {
@@ -110,11 +113,73 @@ namespace eQuiz
                     }
                 }
             }
+>>>>>>> b1b0993a2194e35cc618da17645c4fe7b767b284
         }
-
-        private void gridPruebActivas_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+         private void gridPruebActivas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            Estudiante estud = new Estudiante();
+            int row = Convert.ToInt32(this.gridPruebActivas.CurrentRow.Index);
+            string id = this.gridPruebActivas.Rows[row].Cells[5].Value + "";
 
+            FormNuevoActivo edt = new FormNuevoActivo(id);
+            edt.Show();
+           // MessageBox.Show("Prueba Activada");
+
+            
         }
+<<<<<<< HEAD
+         public void cargaratvias() {
+             Cursos curso = new Cursos();
+             this.gridPruebActivas.Rows.Clear();
+             string curso_id = this.cbxCurso.SelectedValue.ToString();
+             DataSet resource = curso.obtenerPruebInactivas(curso_id);
+             if (resource != null)
+             {
+                 if (resource.Tables.Count < 8)
+                 {
+                     for (int i = 0; i <= resource.Tables[1].Rows.Count - 1; i++)
+                     {
+                         this.gridPruebActivas.Rows.Add(resource.Tables[1].Rows[i].ItemArray[4].ToString(),
+                                 resource.Tables[1].Rows[i].ItemArray[3].ToString(),
+                                 resource.Tables[1].Rows[i].ItemArray[2].ToString(),
+                                 resource.Tables[1].Rows[i].ItemArray[0].ToString(),
+                             //resource.Tables[1].Rows[i].ItemArray[1].ToString(),
+                                 resource.Tables[2].Rows[i].ItemArray[1].ToString(),
+                                 resource.Tables[5].Rows[i].ItemArray[1].ToString());
+                     }
+                 }
+                 else
+                 {
+                     for (int i = 0; i <= resource.Tables[1].Rows.Count - 1; i++)
+                     {
+                         if (resource.Tables[2].Rows[i].ItemArray[0].Equals("true"))
+                         { }
+                         else
+                         {
+                             this.gridPruebActivas.Rows.Add(resource.Tables[9].Rows[i].ItemArray[1].ToString(),
+                                 resource.Tables[6].Rows[i].ItemArray[1].ToString(),
+                                 resource.Tables[5].Rows[i].ItemArray[1].ToString(),
+                                 resource.Tables[2].Rows[i].ItemArray[1].ToString(),
+                                 resource.Tables[3].Rows[i].ItemArray[1].ToString(),
+                                 resource.Tables[8].Rows[i].ItemArray[1].ToString());
+                         }
+                     }
+                 }
+             }
+         }
+
+         private void InicioProfe_Activated(object sender, EventArgs e)
+         {
+             this.cargaratvias();
+         }
+=======
+
+        private void bnNueva_Click(object sender, EventArgs e)
+        {
+            string curso_id = this.cbxCurso.SelectedValue.ToString();
+            FormNuevaPrueba nueva = new FormNuevaPrueba(curso_id);
+            nueva.Show();
+        }
+>>>>>>> b1b0993a2194e35cc618da17645c4fe7b767b284
     }
 }
