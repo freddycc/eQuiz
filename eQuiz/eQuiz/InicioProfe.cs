@@ -38,6 +38,12 @@ namespace eQuiz
                 this.cbxCurso.ValueMember = "id";
                 this.cbxCurso.SelectedIndex = 0;
             }
+
+            resorce = con.ConvertXMLToDataSet("http://localhost:3000/profesores/12/activas.xml");
+            if (resorce != null) 
+            {
+
+            }
         }
 
         private void bnBuscar_Click(object sender, EventArgs e)

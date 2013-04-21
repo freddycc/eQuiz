@@ -30,7 +30,15 @@ class ProfesoresController < ApplicationController
 
   #GET /profesores/1/activas.xml
   def getactivas
-    @    
+    @profesor = Profesore.find(params[:id])
+    @cursos = @profesor.cursos
+    @pruebas = Prueba.new
+    @cursos.each do |curso|
+      pruebas = curso.pruebas
+      pruebas.each do |prueba|
+        @pruebas = (prueba)
+      end
+    end
   end
 
   def add
