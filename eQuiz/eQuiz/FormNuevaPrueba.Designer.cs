@@ -39,13 +39,13 @@
             this.dtFecha = new System.Windows.Forms.DateTimePicker();
             this.txtComentario = new System.Windows.Forms.RichTextBox();
             this.gbxPreguntas = new System.Windows.Forms.GroupBox();
-            this.txtPreguntas = new System.Windows.Forms.RichTextBox();
-            this.lblPreguntas = new System.Windows.Forms.Label();
-            this.txtPregunta = new System.Windows.Forms.TextBox();
             this.bnAgregarPreguntas = new System.Windows.Forms.Button();
+            this.txtPregunta = new System.Windows.Forms.TextBox();
+            this.lblPreguntas = new System.Windows.Forms.Label();
+            this.txtPreguntas = new System.Windows.Forms.RichTextBox();
             this.bnCrear = new System.Windows.Forms.Button();
             this.bnCancelar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblIdCurso = new System.Windows.Forms.Label();
             this.gbxPreguntas.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,7 +132,7 @@
             // 
             this.txtComentario.Location = new System.Drawing.Point(1011, 76);
             this.txtComentario.Name = "txtComentario";
-            this.txtComentario.Size = new System.Drawing.Size(263, 66);
+            this.txtComentario.Size = new System.Drawing.Size(263, 131);
             this.txtComentario.TabIndex = 9;
             this.txtComentario.Text = "";
             // 
@@ -149,14 +149,22 @@
             this.gbxPreguntas.TabStop = false;
             this.gbxPreguntas.Text = "Agregar Preguntas";
             // 
-            // txtPreguntas
+            // bnAgregarPreguntas
             // 
-            this.txtPreguntas.Enabled = false;
-            this.txtPreguntas.Location = new System.Drawing.Point(60, 116);
-            this.txtPreguntas.Name = "txtPreguntas";
-            this.txtPreguntas.Size = new System.Drawing.Size(845, 265);
-            this.txtPreguntas.TabIndex = 0;
-            this.txtPreguntas.Text = "";
+            this.bnAgregarPreguntas.Location = new System.Drawing.Point(724, 56);
+            this.bnAgregarPreguntas.Name = "bnAgregarPreguntas";
+            this.bnAgregarPreguntas.Size = new System.Drawing.Size(139, 30);
+            this.bnAgregarPreguntas.TabIndex = 3;
+            this.bnAgregarPreguntas.Text = "Agregar pregunta";
+            this.bnAgregarPreguntas.UseVisualStyleBackColor = true;
+            this.bnAgregarPreguntas.Click += new System.EventHandler(this.bnAgregarPreguntas_Click);
+            // 
+            // txtPregunta
+            // 
+            this.txtPregunta.Location = new System.Drawing.Point(180, 61);
+            this.txtPregunta.Name = "txtPregunta";
+            this.txtPregunta.Size = new System.Drawing.Size(507, 22);
+            this.txtPregunta.TabIndex = 2;
             // 
             // lblPreguntas
             // 
@@ -167,21 +175,14 @@
             this.lblPreguntas.TabIndex = 1;
             this.lblPreguntas.Text = "Pregunta Nueva";
             // 
-            // txtPregunta
+            // txtPreguntas
             // 
-            this.txtPregunta.Location = new System.Drawing.Point(180, 61);
-            this.txtPregunta.Name = "txtPregunta";
-            this.txtPregunta.Size = new System.Drawing.Size(507, 22);
-            this.txtPregunta.TabIndex = 2;
-            // 
-            // bnAgregarPreguntas
-            // 
-            this.bnAgregarPreguntas.Location = new System.Drawing.Point(724, 56);
-            this.bnAgregarPreguntas.Name = "bnAgregarPreguntas";
-            this.bnAgregarPreguntas.Size = new System.Drawing.Size(139, 30);
-            this.bnAgregarPreguntas.TabIndex = 3;
-            this.bnAgregarPreguntas.Text = "Agregar pregunta";
-            this.bnAgregarPreguntas.UseVisualStyleBackColor = true;
+            this.txtPreguntas.Enabled = false;
+            this.txtPreguntas.Location = new System.Drawing.Point(60, 116);
+            this.txtPreguntas.Name = "txtPreguntas";
+            this.txtPreguntas.Size = new System.Drawing.Size(845, 265);
+            this.txtPreguntas.TabIndex = 0;
+            this.txtPreguntas.Text = "";
             // 
             // bnCrear
             // 
@@ -191,6 +192,7 @@
             this.bnCrear.TabIndex = 11;
             this.bnCrear.Text = "Crear Prueba";
             this.bnCrear.UseVisualStyleBackColor = true;
+            this.bnCrear.Click += new System.EventHandler(this.bnCrear_Click);
             // 
             // bnCancelar
             // 
@@ -201,22 +203,21 @@
             this.bnCancelar.Text = "Cancelar";
             this.bnCancelar.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblIdCurso
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(43, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(181, 29);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Nueva Prueba";
+            this.lblIdCurso.AutoSize = true;
+            this.lblIdCurso.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdCurso.Location = new System.Drawing.Point(43, 9);
+            this.lblIdCurso.Name = "lblIdCurso";
+            this.lblIdCurso.Size = new System.Drawing.Size(0, 29);
+            this.lblIdCurso.TabIndex = 13;
             // 
             // FormNuevaPrueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1304, 667);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblIdCurso);
             this.Controls.Add(this.bnCancelar);
             this.Controls.Add(this.bnCrear);
             this.Controls.Add(this.gbxPreguntas);
@@ -233,7 +234,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormNuevaPrueba";
-            this.Text = "Prueba";
+            this.Text = "Nueva Prueba";
             this.Load += new System.EventHandler(this.FormNuevaPrueba_Load);
             this.gbxPreguntas.ResumeLayout(false);
             this.gbxPreguntas.PerformLayout();
@@ -261,6 +262,6 @@
         private System.Windows.Forms.RichTextBox txtPreguntas;
         private System.Windows.Forms.Button bnCrear;
         private System.Windows.Forms.Button bnCancelar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblIdCurso;
     }
 }

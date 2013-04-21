@@ -88,6 +88,13 @@ class PruebasController < ApplicationController
   # POST /pruebas.json
   def create
     @prueba = Prueba.new(params[:prueba])
+    @prueba.nombre = params[:nombre]
+    @prueba.duracion = params[:duracion]
+    @prueba.estado = params[:estado]
+    @prueba.comentario = params[:comentario]
+    @prueba.fecha = params[:fecha]
+    @prueba.preguntas = params[:preguntas]
+    @prueba.curso_id = params[:curso_id]
 
     respond_to do |format|
       if @prueba.save
@@ -95,7 +102,7 @@ class PruebasController < ApplicationController
         format.json { render json: @prueba, status: :created, location: @prueba }
       else
         format.html { render action: "new" }
-        format.json { render json: @prueba.errors, status: :unprocessable_entity }
+        format.json { head :no_content }
       end
     end
   end
@@ -104,7 +111,7 @@ class PruebasController < ApplicationController
   # PUT /pruebas/1.json
   def update
     @prueba = Prueba.find(params[:id])
-
+    @prueba.estado = params[:estado]
     respond_to do |format|
       if @prueba.update_attributes(params[:prueba])
         format.html { redirect_to @prueba, notice: 'Prueba was successfully updated.' }
@@ -112,6 +119,22 @@ class PruebasController < ApplicationController
       else
         format.html { render action: "edit" }
         format.json { render json: @prueba.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+   # PUT /pruebas/1
+  # PUT /pruebas/1/updatepruebas.json
+  def updateinactiva
+    @prueba = Prueba.find(params[:id])
+    @prueba.estado = params[:estado] 
+    respond_to do |format|
+      if @prueba.update_attributes(params[:prueba])
+       # format.html { render action: "edit" }
+        format.json { render json: @prueba.errors }
+      else
+       # format.html { redirect_to @prueba, notice: 'Prueba was successfully updated.' }
+        format.json { head :no_content }
       end
     end
   end

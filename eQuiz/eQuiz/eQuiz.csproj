@@ -59,6 +59,12 @@
     <Compile Include="FormNuevaPrueba.Designer.cs">
       <DependentUpon>FormNuevaPrueba.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNuevoActivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNuevoActivo.Designer.cs">
+      <DependentUpon>FormNuevoActivo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormNuevoCurso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     <Compile Include="RollProf.cs" />
     <EmbeddedResource Include="FormNuevaPrueba.resx">
       <DependentUpon>FormNuevaPrueba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNuevoActivo.resx">
+      <DependentUpon>FormNuevoActivo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNuevoCurso.resx">
       <DependentUpon>FormNuevoCurso.cs</DependentUpon>

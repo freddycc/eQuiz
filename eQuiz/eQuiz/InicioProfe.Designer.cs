@@ -62,7 +62,7 @@
             this.txComentario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txCreado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txIdPrueba = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bnNueva = new System.Windows.Forms.Button();
             this.lblCurso = new System.Windows.Forms.Label();
             this.cbxCurso = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
@@ -260,7 +260,7 @@
             this.gridPruebActivas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.gridPruebActivas.Size = new System.Drawing.Size(989, 228);
             this.gridPruebActivas.TabIndex = 4;
-            this.gridPruebActivas.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPruebActivas_CellContentDoubleClick);
+            this.gridPruebActivas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPruebActivas_CellDoubleClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -341,7 +341,7 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.gridPruebas);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.bnNueva);
             this.groupBox1.Location = new System.Drawing.Point(24, 99);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1212, 453);
@@ -417,15 +417,16 @@
             this.txIdPrueba.ReadOnly = true;
             this.txIdPrueba.Visible = false;
             // 
-            // button1
+            // bnNueva
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(39, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 36);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Nueva Prueva";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bnNueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnNueva.Location = new System.Drawing.Point(39, 34);
+            this.bnNueva.Name = "bnNueva";
+            this.bnNueva.Size = new System.Drawing.Size(126, 36);
+            this.bnNueva.TabIndex = 2;
+            this.bnNueva.Text = "Nueva Prueva";
+            this.bnNueva.UseVisualStyleBackColor = true;
+            this.bnNueva.Click += new System.EventHandler(this.bnNueva_Click);
             // 
             // lblCurso
             // 
@@ -457,6 +458,7 @@
             this.Name = "InicioProfe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "eQuiz - Profesor";
+            this.Activated += new System.EventHandler(this.InicioProfe_Activated);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -485,7 +487,7 @@
         private System.Windows.Forms.TabPage tabCursos;
         private System.Windows.Forms.ComboBox cbxCurso;
         private System.Windows.Forms.Label lblCurso;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bnNueva;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView gridPruebas;
         private System.Windows.Forms.GroupBox groupBox3;
