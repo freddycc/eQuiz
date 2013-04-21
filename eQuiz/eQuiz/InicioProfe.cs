@@ -73,9 +73,9 @@ namespace eQuiz
 
         private void bnBuscarAct_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             this.cargaratvias();
-=======
+
             Cursos curso = new Cursos();
             this.gridPruebActivas.Rows.Clear();
             string curso_id = this.cbxCurs.SelectedValue.ToString();
@@ -113,7 +113,7 @@ namespace eQuiz
                     }
                 }
             }
->>>>>>> b1b0993a2194e35cc618da17645c4fe7b767b284
+
         }
          private void gridPruebActivas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -127,7 +127,7 @@ namespace eQuiz
 
             
         }
-<<<<<<< HEAD
+
          public void cargaratvias() {
              Cursos curso = new Cursos();
              this.gridPruebActivas.Rows.Clear();
@@ -172,7 +172,7 @@ namespace eQuiz
          {
              this.cargaratvias();
          }
-=======
+
 
         private void bnNueva_Click(object sender, EventArgs e)
         {
@@ -180,6 +180,6 @@ namespace eQuiz
             FormNuevaPrueba nueva = new FormNuevaPrueba(curso_id);
             nueva.Show();
         }
->>>>>>> b1b0993a2194e35cc618da17645c4fe7b767b284
+
     }
 }
