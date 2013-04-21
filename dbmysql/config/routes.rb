@@ -32,10 +32,6 @@ Dbmysql::Application.routes.draw do
   match 'cursos/:curso_id/:estudiante_id/delmatricula' => 'cursos#delmatricula', :via => :delete
     #obtiene las pruebas del curso
   match 'cursos/:id/pruebas' => 'cursos#pruebas', :via => :get
-
-  #Actions of tests
-    #obtiene pruebas activas del curso
-  match 'cursos/:id/activas' => 'pruebas#activas', :via => :get
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
