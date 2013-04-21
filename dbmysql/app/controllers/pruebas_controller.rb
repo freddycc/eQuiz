@@ -22,10 +22,27 @@ class PruebasController < ApplicationController
     end
   end
 
-  #GET /pruebas/getactivas.xml
+  #GET /profesores/1/activas.xml
   def activas
-    @pruebas = Prueba.where(:estado => "activa")
-    
+    @curso = Curso.find(params[:id])
+    @pruebas = @curso.pruebas
+    respond_to do |format|
+      if @pruebas.empty?
+        format.xml { head :no_content }
+      else
+        @pruebas.each do |prueba|
+          if prueba.estado == 'inactiva'
+            prueba.nombre = nil
+            prueba.comentario = nil
+            prueba.fecha = nil
+            prueba.preguntas = nil
+            prueba.estado = nil
+            prueba.duracion = nil
+          end
+        end
+        format.xml { render xml: @pruebas }
+      end
+    end
   end
 
   # GET /pruebas/new

@@ -43,12 +43,15 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gridPruebActivas = new System.Windows.Forms.DataGridView();
+<<<<<<< HEAD
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+=======
+>>>>>>> f33d2ea6b2f143865a186ac1774059cdd96fe28c
             this.tabCursos = new System.Windows.Forms.TabPage();
             this.bnBuscar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -62,6 +65,18 @@
             this.button1 = new System.Windows.Forms.Button();
             this.lblCurso = new System.Windows.Forms.Label();
             this.cbxCurso = new System.Windows.Forms.ComboBox();
+<<<<<<< HEAD
+=======
+            this.lblcbxCurs = new System.Windows.Forms.Label();
+            this.cbxCurs = new System.Windows.Forms.ComboBox();
+            this.bnBuscarAct = new System.Windows.Forms.Button();
+            this.txNomActivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txEstActivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txDurActivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txComActivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txCreActivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txIdActivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+>>>>>>> f33d2ea6b2f143865a186ac1774059cdd96fe28c
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabNotif.SuspendLayout();
@@ -202,6 +217,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.bnBuscarAct);
+            this.groupBox2.Controls.Add(this.cbxCurs);
+            this.groupBox2.Controls.Add(this.lblcbxCurs);
             this.groupBox2.Controls.Add(this.gridPruebActivas);
             this.groupBox2.Location = new System.Drawing.Point(47, 11);
             this.groupBox2.Name = "groupBox2";
@@ -215,6 +233,7 @@
             this.gridPruebActivas.ColumnHeadersHeight = 30;
             this.gridPruebActivas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gridPruebActivas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+<<<<<<< HEAD
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -222,12 +241,22 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.gridPruebActivas.Location = new System.Drawing.Point(75, 34);
+=======
+            this.txNomActivo,
+            this.txEstActivo,
+            this.txDurActivo,
+            this.txComActivo,
+            this.txCreActivo,
+            this.txIdActivo});
+            this.gridPruebActivas.Location = new System.Drawing.Point(142, 34);
+>>>>>>> f33d2ea6b2f143865a186ac1774059cdd96fe28c
             this.gridPruebActivas.Name = "gridPruebActivas";
             this.gridPruebActivas.RowHeadersVisible = false;
             this.gridPruebActivas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.gridPruebActivas.Size = new System.Drawing.Size(989, 228);
             this.gridPruebActivas.TabIndex = 4;
             // 
+<<<<<<< HEAD
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.Frozen = true;
@@ -278,6 +307,8 @@
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Visible = false;
             // 
+=======
+>>>>>>> f33d2ea6b2f143865a186ac1774059cdd96fe28c
             // tabCursos
             // 
             this.tabCursos.Controls.Add(this.bnBuscar);
@@ -384,6 +415,35 @@
             this.txIdPrueba.Visible = false;
             // 
             // button1
+<<<<<<< HEAD
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(39, 34);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(126, 36);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Nueva Prueva";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // lblCurso
+            // 
+            this.lblCurso.AutoSize = true;
+            this.lblCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurso.Location = new System.Drawing.Point(72, 39);
+            this.lblCurso.Name = "lblCurso";
+            this.lblCurso.Size = new System.Drawing.Size(53, 18);
+            this.lblCurso.TabIndex = 1;
+            this.lblCurso.Text = "Curso:";
+            // 
+            // cbxCurso
+            // 
+            this.cbxCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCurso.FormattingEnabled = true;
+            this.cbxCurso.Location = new System.Drawing.Point(214, 31);
+            this.cbxCurso.Name = "cbxCurso";
+            this.cbxCurso.Size = new System.Drawing.Size(167, 26);
+            this.cbxCurso.TabIndex = 0;
+=======
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(39, 34);
@@ -412,6 +472,84 @@
             this.cbxCurso.Size = new System.Drawing.Size(167, 26);
             this.cbxCurso.TabIndex = 0;
             // 
+            // lblcbxCurs
+            // 
+            this.lblcbxCurs.AutoSize = true;
+            this.lblcbxCurs.Location = new System.Drawing.Point(10, 44);
+            this.lblcbxCurs.Name = "lblcbxCurs";
+            this.lblcbxCurs.Size = new System.Drawing.Size(126, 18);
+            this.lblcbxCurs.TabIndex = 5;
+            this.lblcbxCurs.Text = "Seleccione Curso";
+            // 
+            // cbxCurs
+            // 
+            this.cbxCurs.FormattingEnabled = true;
+            this.cbxCurs.Location = new System.Drawing.Point(13, 65);
+            this.cbxCurs.Name = "cbxCurs";
+            this.cbxCurs.Size = new System.Drawing.Size(121, 26);
+            this.cbxCurs.TabIndex = 6;
+            // 
+            // bnBuscarAct
+            // 
+            this.bnBuscarAct.Location = new System.Drawing.Point(13, 97);
+            this.bnBuscarAct.Name = "bnBuscarAct";
+            this.bnBuscarAct.Size = new System.Drawing.Size(121, 27);
+            this.bnBuscarAct.TabIndex = 7;
+            this.bnBuscarAct.Text = "Buscar Activas";
+            this.bnBuscarAct.UseVisualStyleBackColor = true;
+            this.bnBuscarAct.Click += new System.EventHandler(this.bnBuscarAct_Click);
+            // 
+            // txNomActivo
+            // 
+            this.txNomActivo.Frozen = true;
+            this.txNomActivo.HeaderText = "Nombre";
+            this.txNomActivo.Name = "txNomActivo";
+            this.txNomActivo.ReadOnly = true;
+            this.txNomActivo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.txNomActivo.Width = 180;
+            // 
+            // txEstActivo
+            // 
+            this.txEstActivo.Frozen = true;
+            this.txEstActivo.HeaderText = "Estado";
+            this.txEstActivo.Name = "txEstActivo";
+            this.txEstActivo.ReadOnly = true;
+            this.txEstActivo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.txEstActivo.Width = 150;
+            // 
+            // txDurActivo
+            // 
+            this.txDurActivo.Frozen = true;
+            this.txDurActivo.HeaderText = "Duración";
+            this.txDurActivo.Name = "txDurActivo";
+            this.txDurActivo.ReadOnly = true;
+            this.txDurActivo.Width = 160;
+            // 
+            // txComActivo
+            // 
+            this.txComActivo.Frozen = true;
+            this.txComActivo.HeaderText = "Comentario";
+            this.txComActivo.Name = "txComActivo";
+            this.txComActivo.ReadOnly = true;
+            this.txComActivo.Width = 250;
+            // 
+            // txCreActivo
+            // 
+            this.txCreActivo.Frozen = true;
+            this.txCreActivo.HeaderText = "Creado el día";
+            this.txCreActivo.Name = "txCreActivo";
+            this.txCreActivo.ReadOnly = true;
+            this.txCreActivo.Width = 250;
+            // 
+            // txIdActivo
+            // 
+            this.txIdActivo.Frozen = true;
+            this.txIdActivo.HeaderText = "";
+            this.txIdActivo.Name = "txIdActivo";
+            this.txIdActivo.ReadOnly = true;
+            this.txIdActivo.Visible = false;
+>>>>>>> f33d2ea6b2f143865a186ac1774059cdd96fe28c
+            // 
             // InicioProfe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -430,6 +568,10 @@
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridPruebCalif)).EndInit();
             this.groupBox2.ResumeLayout(false);
+<<<<<<< HEAD
+=======
+            this.groupBox2.PerformLayout();
+>>>>>>> f33d2ea6b2f143865a186ac1774059cdd96fe28c
             ((System.ComponentModel.ISupportInitialize)(this.gridPruebActivas)).EndInit();
             this.tabCursos.ResumeLayout(false);
             this.tabCursos.PerformLayout();
@@ -463,12 +605,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn txCreado;
         private System.Windows.Forms.DataGridViewTextBoxColumn txIdPrueba;
         private System.Windows.Forms.DataGridView gridPruebActivas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridView gridPruebCalif;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
@@ -476,5 +612,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.Button bnBuscarAct;
+        private System.Windows.Forms.ComboBox cbxCurs;
+        private System.Windows.Forms.Label lblcbxCurs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txNomActivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txEstActivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txDurActivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txComActivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txCreActivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txIdActivo;
     }
 }
