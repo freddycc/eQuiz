@@ -28,6 +28,21 @@ class ProfesoresController < ApplicationController
     end
   end
 
+  def prof
+    @profesore = Profesore.where(:username => params[:username], :password => params[:password])
+   respond_to do |format|
+    if @profesore.empty?
+       format.html # index.html.erb
+        format.json { head :no_content }
+        format.xml { head :no_content }
+      else
+        format.html # index.html.erb
+        format.json { render json: @profesores }
+        format.xml { render xml: @profesores }
+      end
+    end
+  end
+
   #GET /profesores/1/activas.xml
   def getactivas
     @profesor = Profesore.find(params[:id])
