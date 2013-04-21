@@ -59,8 +59,6 @@ namespace eQuiz
                         resource.Tables[3].Rows[i].ItemArray[1].ToString());
                 }
             }
-
-            this.comboBox1.ValueMember = "id";
         }
     }
 }
