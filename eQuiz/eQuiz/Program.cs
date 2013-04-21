@@ -15,7 +15,7 @@ namespace eQuiz
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InicioProfe());
+            Application.Run(new inicioEstudiantes());
         }
     }
 }

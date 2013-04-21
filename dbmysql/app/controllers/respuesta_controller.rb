@@ -40,7 +40,10 @@ class RespuestaController < ApplicationController
   # POST /respuesta
   # POST /respuesta.json
   def create
-    @respuestum = Respuestum.new(params[:respuestum])
+    @respuestum = Respuesta.new
+    @respuestum.estudiante_id = params[:estudiante_id]
+    @respuestum.prueba_id = params[:estudiante_id]
+    @respuestum.respuesta = params[:respuesta]
 
     respond_to do |format|
       if @respuestum.save
@@ -48,7 +51,7 @@ class RespuestaController < ApplicationController
         format.json { render json: @respuestum, status: :created, location: @respuestum }
       else
         format.html { render action: "new" }
-        format.json { render json: @respuestum.errors, status: :unprocessable_entity }
+        format.json { head :no_content }
       end
     end
   end
