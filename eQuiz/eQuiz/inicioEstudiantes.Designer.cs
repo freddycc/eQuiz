@@ -86,7 +86,7 @@
             this.gridPruebActivas.Name = "gridPruebActivas";
             this.gridPruebActivas.RowHeadersVisible = false;
             this.gridPruebActivas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.gridPruebActivas.Size = new System.Drawing.Size(989, 228);
+            this.gridPruebActivas.Size = new System.Drawing.Size(989, 407);
             this.gridPruebActivas.TabIndex = 5;
             // 
             // dataGridViewTextBoxColumn1
