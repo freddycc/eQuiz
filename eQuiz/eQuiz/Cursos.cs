@@ -14,6 +14,13 @@ namespace eQuiz
             string url = "http://localhost:3000/cursos/" + curso_id + "/activas.xml";
             return ejecutar.ConvertXMLToDataSet(url);
         }
+
+        public DataSet obtenerPruebInactivas(string curso_id)
+        {
+            string url = "http://localhost:3000/cursos/" + curso_id + "/inactivas.xml";
+            return ejecutar.ConvertXMLToDataSet(url);
+        }
+
         public DataSet obtenerPruebas(string curso_id)
         {
             string url = "http://localhost:3000/cursos/" + curso_id + "/pruebas.xml";

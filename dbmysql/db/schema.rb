@@ -24,6 +24,11 @@ ActiveRecord::Schema.define(:version => 20130420204615) do
 
   add_index "cursos", ["profesore_id"], :name => "index_cursos_on_profesore_id"
 
+  create_table "cursos_estudiantes", :id => false, :force => true do |t|
+    t.integer "curso_id_id"
+    t.integer "estudiante_id_id"
+  end
+
   create_table "estudiantes", :force => true do |t|
     t.string   "cedula"
     t.string   "nombre"

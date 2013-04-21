@@ -42,6 +42,9 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.bnBuscarAct = new System.Windows.Forms.Button();
+            this.cbxCurs = new System.Windows.Forms.ComboBox();
+            this.lblcbxCurs = new System.Windows.Forms.Label();
             this.gridPruebActivas = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,9 +65,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.lblCurso = new System.Windows.Forms.Label();
             this.cbxCurso = new System.Windows.Forms.ComboBox();
-            this.bnBuscarAct = new System.Windows.Forms.Button();
-            this.cbxCurs = new System.Windows.Forms.ComboBox();
-            this.lblcbxCurs = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabNotif.SuspendLayout();
@@ -214,7 +214,34 @@
             this.groupBox2.Size = new System.Drawing.Size(1159, 268);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Pruebas Activas";
+            this.groupBox2.Text = "Pruebas Inactivas";
+            // 
+            // bnBuscarAct
+            // 
+            this.bnBuscarAct.Location = new System.Drawing.Point(22, 87);
+            this.bnBuscarAct.Name = "bnBuscarAct";
+            this.bnBuscarAct.Size = new System.Drawing.Size(121, 27);
+            this.bnBuscarAct.TabIndex = 10;
+            this.bnBuscarAct.Text = "Buscar";
+            this.bnBuscarAct.UseVisualStyleBackColor = true;
+            this.bnBuscarAct.Click += new System.EventHandler(this.bnBuscarAct_Click);
+            // 
+            // cbxCurs
+            // 
+            this.cbxCurs.FormattingEnabled = true;
+            this.cbxCurs.Location = new System.Drawing.Point(22, 55);
+            this.cbxCurs.Name = "cbxCurs";
+            this.cbxCurs.Size = new System.Drawing.Size(121, 26);
+            this.cbxCurs.TabIndex = 9;
+            // 
+            // lblcbxCurs
+            // 
+            this.lblcbxCurs.AutoSize = true;
+            this.lblcbxCurs.Location = new System.Drawing.Point(19, 34);
+            this.lblcbxCurs.Name = "lblcbxCurs";
+            this.lblcbxCurs.Size = new System.Drawing.Size(126, 18);
+            this.lblcbxCurs.TabIndex = 8;
+            this.lblcbxCurs.Text = "Seleccione Curso";
             // 
             // gridPruebActivas
             // 
@@ -233,6 +260,7 @@
             this.gridPruebActivas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.gridPruebActivas.Size = new System.Drawing.Size(989, 228);
             this.gridPruebActivas.TabIndex = 4;
+            this.gridPruebActivas.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPruebActivas_CellContentDoubleClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -417,33 +445,6 @@
             this.cbxCurso.Name = "cbxCurso";
             this.cbxCurso.Size = new System.Drawing.Size(167, 26);
             this.cbxCurso.TabIndex = 0;
-            // 
-            // bnBuscarAct
-            // 
-            this.bnBuscarAct.Location = new System.Drawing.Point(22, 87);
-            this.bnBuscarAct.Name = "bnBuscarAct";
-            this.bnBuscarAct.Size = new System.Drawing.Size(121, 27);
-            this.bnBuscarAct.TabIndex = 10;
-            this.bnBuscarAct.Text = "Buscar Activas";
-            this.bnBuscarAct.UseVisualStyleBackColor = true;
-            this.bnBuscarAct.Click += new System.EventHandler(this.bnBuscarAct_Click);
-            // 
-            // cbxCurs
-            // 
-            this.cbxCurs.FormattingEnabled = true;
-            this.cbxCurs.Location = new System.Drawing.Point(22, 55);
-            this.cbxCurs.Name = "cbxCurs";
-            this.cbxCurs.Size = new System.Drawing.Size(121, 26);
-            this.cbxCurs.TabIndex = 9;
-            // 
-            // lblcbxCurs
-            // 
-            this.lblcbxCurs.AutoSize = true;
-            this.lblcbxCurs.Location = new System.Drawing.Point(19, 34);
-            this.lblcbxCurs.Name = "lblcbxCurs";
-            this.lblcbxCurs.Size = new System.Drawing.Size(126, 18);
-            this.lblcbxCurs.TabIndex = 8;
-            this.lblcbxCurs.Text = "Seleccione Curso";
             // 
             // InicioProfe
             // 

@@ -76,7 +76,7 @@ namespace eQuiz
             Cursos curso = new Cursos();
             this.gridPruebActivas.Rows.Clear();
             string curso_id = this.cbxCurso.SelectedValue.ToString();
-            DataSet resource = curso.obtenerPruebActivas(curso_id);
+            DataSet resource = curso.obtenerPruebInactivas(curso_id);
             if (resource != null)
             {
                 if (resource.Tables.Count < 8)
@@ -110,6 +110,11 @@ namespace eQuiz
                     }
                 }
             }
+        }
+
+        private void gridPruebActivas_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
