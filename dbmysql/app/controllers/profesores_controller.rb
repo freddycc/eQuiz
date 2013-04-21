@@ -28,6 +28,11 @@ class ProfesoresController < ApplicationController
     end
   end
 
+  #GET /profesores/1/activas.xml
+  def getactivas
+    @    
+  end
+
   def add
     @profesore = Profesore.new
     @profesore.nombre = params[:nombre]
