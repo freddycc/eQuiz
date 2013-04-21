@@ -40,5 +40,27 @@ namespace eQuiz
                 this.comboBox1.SelectedIndex = 0;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Cursos curso = new Cursos();
+            this.gridPruebActivas.Rows.Clear();
+            string curso_id = this.comboBox1.SelectedValue.ToString();
+            DataSet resource = curso.obtenerPruebas(curso_id);
+            if (resource != null)
+            {
+                for (int i = 0; i <= resource.Tables[1].Rows.Count - 1; i++)
+                {
+                    this.gridPruebActivas.Rows.Add(resource.Tables[1].Rows[i].ItemArray[4].ToString(),
+                        resource.Tables[1].Rows[i].ItemArray[3].ToString(),
+                        resource.Tables[1].Rows[i].ItemArray[2].ToString(),
+                        resource.Tables[1].Rows[i].ItemArray[0].ToString(),
+                        resource.Tables[2].Rows[i].ItemArray[1].ToString(),
+                        resource.Tables[3].Rows[i].ItemArray[1].ToString());
+                }
+            }
+
+            this.comboBox1.ValueMember = "id";
+        }
     }
 }
