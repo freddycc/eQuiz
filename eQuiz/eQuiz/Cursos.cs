@@ -9,11 +9,46 @@ namespace eQuiz
     class Cursos
     {
         private HttpConexion ejecutar = new HttpConexion();
+
+        public Boolean crearPrueba(string curso_id,string nombre, string estado, string duracion, string comentario, string fecha, string preguntas)
+        {
+            Boolean resultado = true;
+            string[] var = new string[7];
+            string[] valor = new string[7];
+            string url = "";
+            var[0] = "nombre";
+            valor[0] = nombre;
+            var[1] = "estado";
+            valor[1] = estado;
+            var[2] = "duracion";
+            valor[2] = duracion;
+            var[3] = "comentario";
+            valor[3] = comentario;
+            var[4] = "fecha";
+            valor[4] = fecha;
+            var[5] = "preguntas";
+            valor[5] = preguntas;
+            var[6] = "curso_id";
+            valor[6] = curso_id;
+
+            url = "http://localhost:3000/pruebas.json";
+
+            if (ejecutar.HttpPost(url, var, valor, "POST").Equals(""))
+                resultado = false;
+            return resultado;
+        }
         public DataSet obtenerPruebActivas(string curso_id)
         {
             string url = "http://localhost:3000/cursos/" + curso_id + "/activas.xml";
             return ejecutar.ConvertXMLToDataSet(url);
         }
+
+        public DataSet obtenerPruebInactivas(string curso_id)
+        {
+            string url = "http://localhost:3000/cursos/" + curso_id + "/inactivas.xml";
+            return ejecutar.ConvertXMLToDataSet(url);
+        }
+
         public DataSet obtenerPruebas(string curso_id)
         {
             string url = "http://localhost:3000/cursos/" + curso_id + "/pruebas.xml";

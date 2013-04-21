@@ -57,6 +57,24 @@ namespace eQuiz
             return resultado;            
         }
 
+        public Boolean editinactivo(String id)
+        {
+            Boolean resultado = true;
+            string[] var = new string[6];
+            string[] valor = new string[6];
+            string url = "";
+            String estado = "activa";
+            var[0] = "estado";
+            valor[0] = estado;
+
+
+            url = "http://localhost:3000/pruebas/" + id + "/updateprueba.json";
+            HttpConexion ejecutar = new HttpConexion();
+            if (ejecutar.HttpPost(url, var, valor, "PUT").Equals(""))
+                resultado = false;
+            return resultado;
+        }
+
         public Boolean delete(string id) {
             Boolean resultado = true;
             string[] var = new string[1];
