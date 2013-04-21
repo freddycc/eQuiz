@@ -34,9 +34,39 @@ namespace eQuiz
 
         private void bnIniciar_Click(object sender, EventArgs e)
         {
-            Mantenimiento inicio = new Mantenimiento();
-            inicio.Show();            
-            this.Hide();
+            String user = this.txtUsuario.Text;
+            String pass = this.txtContrasena.Text;
+            Profesor profesor = new Profesor();
+            Boolean prof = profesor.logprof(user, pass);
+
+            if (user.Equals("Admin") && pass.Equals("12345"))
+            {
+                Mantenimiento inicio = new Mantenimiento();
+                inicio.Show();
+            }
+            else
+            {
+                if (prof == true)
+                {
+                    InicioProfe InicioProfe = new InicioProfe();
+                    InicioProfe.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    Boolean est = profesor.logest(user, pass);
+                    if (est == true)
+                    {
+                        inicioEstudiantes inicioEstudiantes = new inicioEstudiantes();
+                        inicioEstudiantes.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario Incorrecto, intente de nuevo");
+                    }
+                }
+            }
         }
     }
 }

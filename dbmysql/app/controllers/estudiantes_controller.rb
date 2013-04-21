@@ -28,6 +28,20 @@ class EstudiantesController < ApplicationController
     end
   end
   
+  def estud
+     @estudiante = Estudiante.where(:username => params[:username], :password => params[:password])
+   respond_to do |format|
+    if @estudiante.empty?
+       format.html # index.html.erb
+        format.json { head :no_content }
+        format.xml { head :no_content }
+      else
+        format.html # index.html.erb
+        format.json { render json: @estudiante }
+        format.xml { render xml: @estudiante }
+      end
+    end
+  end
   # GET /estudiantes/new
   # GET /estudiantes/new.json
   def new

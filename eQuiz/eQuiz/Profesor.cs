@@ -70,5 +70,38 @@ namespace eQuiz
                 resultado = false;
             return resultado;
         }
+        public Boolean logprof(String usuario, String pass)
+        {
+            Boolean resultado = true;
+            string[] var = new string[6];
+            string[] valor = new string[6];
+            var[0] = "username";
+            valor[0] = usuario;
+            var[1] = "password";
+            valor[1] = pass;
+
+            String url = "http://localhost:3000/profesores/prof.json";
+            HttpConexion ejecutar = new HttpConexion();
+            if (ejecutar.HttpPost(url, var, valor, "POST").Equals(""))
+                resultado = false;
+            return resultado;
+        }
+
+        public Boolean logest(String usuario, String pass)
+        {
+            Boolean resultado = true;
+            string[] var = new string[6];
+            string[] valor = new string[6];
+            var[0] = "username";
+            valor[0] = usuario;
+            var[1] = "password";
+            valor[1] = pass;
+
+            String url = "http://localhost:3000/estudiantes/estud.json";
+            HttpConexion ejecutar = new HttpConexion();
+            if (ejecutar.HttpPost(url, var, valor, "POST").Equals(""))
+                resultado = false;
+            return resultado;
+        }
     }
 }

@@ -18,11 +18,11 @@ Dbmysql::Application.routes.draw do
 
   #Actions of students
   match 'estudiantes/add' => 'estudiantes#add', :via => :post
-
+  match 'estudiantes/estud' => 'estudiantes#estud', :via => :post
 
   #Actions of teachers
   match 'profesores/add' => 'profesores#add', :via => :post
-
+  match 'profesores/prof' => 'profesores#prof', :via => :post
   #Actions of Cursos
     #obtiene estudiantes matriculados
   match 'cursos/:id/estudiantes' => 'cursos#estudiantes', :via => :get
