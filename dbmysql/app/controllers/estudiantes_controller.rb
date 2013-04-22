@@ -27,6 +27,23 @@ class EstudiantesController < ApplicationController
       format.json { render json: @estudiante }
     end
   end
+
+  def getcursos
+    @estudiante = Estudiante.find(params[:estudiante_id])
+    @cursos = @estudiante.cursos
+
+    respond_to do |format|
+      if @cursos.empty?
+        format.html # index.html.erb
+        format.json { head :no_content }
+        format.xml { head :no_content }
+      else
+        format.html # index.html.erb
+        format.json { render json: @cursos }
+        format.xml { render xml: @cursos }
+      end
+    end
+  end
   
   def estud
      @estudiante = Estudiante.where(:username => params[:username], :password => params[:password])
@@ -42,6 +59,15 @@ class EstudiantesController < ApplicationController
       end
     end
   end
+
+  def email
+    @estudiante = Estudiante.new
+    @estudiante.email=params[:email]
+    UserMailer.registration_confirmation(@estudiante).deliver
+    return if request.xhr?
+      render :text => 'Message sent successfully'
+  end
+
   # GET /estudiantes/new
   # GET /estudiantes/new.json
   def new

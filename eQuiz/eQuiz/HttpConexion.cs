@@ -101,7 +101,29 @@ namespace eQuiz
 
             return result;
         }
-
+        public DataSet convertPostToDataSet(string data)
+        {
+            string xmlData = data;
+            StringReader stream = null;
+            XmlTextReader reader = null;
+            try
+            {
+                DataSet xmlDS = new DataSet();
+                stream = new StringReader(xmlData);
+                // Load the XmlTextReader from the stream
+                reader = new XmlTextReader(stream);
+                xmlDS.ReadXml(reader);
+                return xmlDS;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                if (reader != null) reader.Close();
+            }
+        }
         
     }
 }

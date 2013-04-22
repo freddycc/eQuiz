@@ -11,10 +11,11 @@ namespace eQuiz
 {
     public partial class inicioEstudiantes : Form
     {
-        public inicioEstudiantes()
+        string estudiante_id = "";
+        public inicioEstudiantes(string estud_id)
         {
-
             InitializeComponent();
+            this.estudiante_id = estud_id;
             this.actTabla();
             this.comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
         }
@@ -23,7 +24,7 @@ namespace eQuiz
         {
             HttpConexion con = new HttpConexion();
           
-            DataSet resorce = con.ConvertXMLToDataSet("http://localhost:3000/cursos.xml");
+            DataSet resorce = con.ConvertXMLToDataSet("http://localhost:3000/estudiantes/"+this.estudiante_id+"/cursos.xml");
             if (resorce != null)
             {
                 DataTable cursos = resorce.Tables[1], cursosCombo = new DataTable();
@@ -41,7 +42,20 @@ namespace eQuiz
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void bnBuscar_Click(object sender, EventArgs e)
+        {
+            this.cargarActivas();
+        }
+
+        private void gridPruebActivas_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = Convert.ToInt32(this.gridPruebActivas.CurrentRow.Index);
+            string prueba_id = this.gridPruebActivas.Rows[row].Cells["columnIdActiva"].Value + "";
+                
+            responderPrueba responder = new responderPrueba(prueba_id, this.estudiante_id);
+            responder.Show();
+        }
+        public void cargarActivas()
         {
             Cursos curso = new Cursos();
             this.gridPruebActivas.Rows.Clear();
@@ -61,13 +75,14 @@ namespace eQuiz
             }
         }
 
-        private void gridPruebActivas_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void inicioEstudiantes_Activated(object sender, EventArgs e)
         {
-            int row = Convert.ToInt32(this.gridPruebActivas.CurrentRow.Index);
-            string prueba_id = this.gridPruebActivas.Rows[row].Cells[5].Value + "",
-                estudiante_id="3";
-            responderPrueba responder = new responderPrueba(prueba_id, estudiante_id);
-            responder.Show();
+            this.cargarActivas();
+        }
+
+        private void inicioEstudiantes_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

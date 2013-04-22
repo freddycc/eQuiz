@@ -37,7 +37,7 @@ namespace eQuiz
             String user = this.txtUsuario.Text;
             String pass = this.txtContrasena.Text;
             Profesor profesor = new Profesor();
-            Boolean prof = profesor.logprof(user, pass);
+            DataSet prof = profesor.logprof(user, pass);
 
             if (user.Equals("Admin") && pass.Equals("12345"))
             {
@@ -46,18 +46,20 @@ namespace eQuiz
             }
             else
             {
-                if (prof == true)
+                if (prof != null)
                 {
-                    InicioProfe InicioProfe = new InicioProfe();
+                    string profeId = prof.Tables["id"].Rows[0].ItemArray[1].ToString();
+                    InicioProfe InicioProfe = new InicioProfe(profeId);
                     InicioProfe.Show();
                     this.Hide();
                 }
                 else
                 {
-                    Boolean est = profesor.logest(user, pass);
-                    if (est == true)
+                    DataSet est = profesor.logest(user, pass);
+                    if (est != null)
                     {
-                        inicioEstudiantes inicioEstudiantes = new inicioEstudiantes();
+                        string estudianteId = est.Tables["id"].Rows[0].ItemArray[1].ToString();
+                        inicioEstudiantes inicioEstudiantes = new inicioEstudiantes(estudianteId);
                         inicioEstudiantes.Show();
                         this.Hide();
                     }

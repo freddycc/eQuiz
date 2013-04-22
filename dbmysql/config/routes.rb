@@ -2,7 +2,7 @@ Dbmysql::Application.routes.draw do
   resources :matriculas
 
 
-  resources :respuesta
+  
 
 
   resources :pruebas
@@ -16,13 +16,19 @@ Dbmysql::Application.routes.draw do
 
   resources :estudiantes
 
+
+
+
   #Actions of students
   match 'estudiantes/add' => 'estudiantes#add', :via => :post
   match 'estudiantes/estud' => 'estudiantes#estud', :via => :post
+  match 'estudiantes/email' => 'estudiantes#email', :via => :post
+  match 'estudiantes/:estudiante_id/cursos' => 'estudiantes#getcursos', :via => :get
 
   #Actions of teachers
   match 'profesores/add' => 'profesores#add', :via => :post
   match 'profesores/prof' => 'profesores#prof', :via => :post
+  match 'profesores/:profe_id/cursos' => 'profesores#getcursos', :via => :get
   #Actions of Cursos
     #obtiene estudiantes matriculados
   match 'cursos/:id/estudiantes' => 'cursos#estudiantes', :via => :get
@@ -32,12 +38,21 @@ Dbmysql::Application.routes.draw do
   match 'cursos/:curso_id/:estudiante_id/delmatricula' => 'cursos#delmatricula', :via => :delete
     #obtiene las pruebas del curso
   match 'cursos/:id/pruebas' => 'cursos#pruebas', :via => :get
+ 
+  
 
   #Actions of tests
     #obtiene pruebas activas del curso
   match 'cursos/:id/activas' => 'pruebas#activas', :via => :get
   match 'cursos/:id/inactivas' => 'pruebas#inactivas', :via => :get
   match 'pruebas/:id/updateprueba' => 'pruebas#updateinactiva', :via => :put
+
+  #Actions of response
+  match 'respuesta/:prueba_id/getrespuestas' => 'respuesta#getrespuestas', :via => :get
+  match 'respuesta/:id/estudiantes' => 'respuesta#estudiantes', :via => :get
+  match 'respuesta/:id' => 'respuesta#show', :via => :get
+  match 'respuesta/:id' => 'respuesta#update', :via => :put
+  match 'respuesta' => 'respuesta#create', :via => :post
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

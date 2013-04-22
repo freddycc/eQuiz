@@ -29,16 +29,43 @@ namespace eQuiz
             this.txtPreguntas.Text = resource.Tables[0].Rows[0].ItemArray[5].ToString();
             this.lblComentarios.Text = resource.Tables[0].Rows[0].ItemArray[0].ToString();
             this.lblNombre.Text = this.lblNombre.Text + resource.Tables[0].Rows[0].ItemArray[4].ToString();
+            this.lblDuracion.Text = resource.Tables[0].Rows[0].ItemArray[2].ToString();
+            int duracion = Int32.Parse(this.lblDuracion.Text);
+            duracion = duracion * 60;
+            duracion = duracion * 1000;
+            this.duracion.Interval = duracion;
+            this.duracion.Start();
         }
 
         private void bnResponder_Click(object sender, EventArgs e)
         {
             Pruebas prueb = new Pruebas();
+            var resultado = MessageBox.Show("Las respuestas enviadas no se podran sobrescribir. \n ¿Esta seguro de las respuestas?","Enviar respuestas",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (resultado == DialogResult.Yes)
+            {
+                if (prueb.crearRespuesta(prueba_id, estudiante_id, this.txtRespuestas.Text))
+                {
+                    MessageBox.Show("Respuesta enviada correctamente.");
+                }
+            }
+        }
+
+        private void duracion_Tick(object sender, EventArgs e)
+        {
+            Pruebas prueb = new Pruebas();
             if (prueb.crearRespuesta(prueba_id, estudiante_id, this.txtRespuestas.Text))
             {
-                MessageBox.Show("Respuesta enviada correctamente.");
+                MessageBox.Show("El tiempo para ejecutar la prueba ha terminado. Las respuestas fueron enviadas correctamente.","Tiempo caducado",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                this.duracion.Stop();
+                this.Dispose();
+                this.Close();
             }
-            
+        }
+
+        private void progreso_Tick(object sender, EventArgs e)
+        {
+            int minutos = Int32.Parse(this.lblTranscurrido.Text) + 1;
+            this.lblTranscurrido.Text = minutos + "";
         }
     }
 }
