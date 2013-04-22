@@ -126,9 +126,11 @@ class PruebasController < ApplicationController
    # PUT /pruebas/1
   # PUT /pruebas/1/updatepruebas.json
   def updateinactiva
+
     @prueba = Prueba.find(params[:id])
     @prueba.estado = params[:estado] 
     respond_to do |format|
+      
       if @prueba.update_attributes(params[:prueba])
        # format.html { render action: "edit" }
         format.json { render json: @prueba.errors }

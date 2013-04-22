@@ -42,6 +42,12 @@ class EstudiantesController < ApplicationController
       end
     end
   end
+
+  def correo
+    @estudiante = params[:email]
+    UserMailer.registration_confirmation(@estudiante).deliver
+  end
+
   # GET /estudiantes/new
   # GET /estudiantes/new.json
   def new
