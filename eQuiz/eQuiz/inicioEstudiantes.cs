@@ -41,7 +41,20 @@ namespace eQuiz
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void bnBuscar_Click(object sender, EventArgs e)
+        {
+            this.cargarActivas();
+        }
+
+        private void gridPruebActivas_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = Convert.ToInt32(this.gridPruebActivas.CurrentRow.Index);
+            string prueba_id = this.gridPruebActivas.Rows[row].Cells["columnIdActiva"].Value + "",
+                estudiante_id="2";
+            responderPrueba responder = new responderPrueba(prueba_id, estudiante_id);
+            responder.Show();
+        }
+        public void cargarActivas()
         {
             Cursos curso = new Cursos();
             this.gridPruebActivas.Rows.Clear();
@@ -61,13 +74,9 @@ namespace eQuiz
             }
         }
 
-        private void gridPruebActivas_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void inicioEstudiantes_Activated(object sender, EventArgs e)
         {
-            int row = Convert.ToInt32(this.gridPruebActivas.CurrentRow.Index);
-            string prueba_id = this.gridPruebActivas.Rows[row].Cells[5].Value + "",
-                estudiante_id="3";
-            responderPrueba responder = new responderPrueba(prueba_id, estudiante_id);
-            responder.Show();
+            //this.cargarActivas();
         }
     }
 }

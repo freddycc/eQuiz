@@ -9,6 +9,21 @@ namespace eQuiz
     class Pruebas
     {
         HttpConexion ejecutar = new HttpConexion();
+        public Boolean calificarPrueba(string id,string nota)
+        {
+            Boolean resultado = true;
+            string[] var = new string[1];
+            string[] valor = new string[1];
+            string url = "";
+            var[0] = "calificacion";
+            valor[0] = nota;            
+
+            url = "http://localhost:3000/respuesta/"+id+".json";
+
+            if (ejecutar.HttpPost(url, var, valor, "PUT").Equals("")==false)
+                resultado = false;
+            return resultado;
+        }
         public DataSet estuduateResp(string respuesta_id)
         {
             string url = "http://localhost:3000/respuesta/" + respuesta_id + "/estudiantes.xml";

@@ -33,14 +33,6 @@
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabNotif = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.popo = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.bnBuscarAct = new System.Windows.Forms.Button();
             this.cbxCurs = new System.Windows.Forms.ComboBox();
@@ -66,9 +58,6 @@
             this.lblCurso = new System.Windows.Forms.Label();
             this.cbxCurso = new System.Windows.Forms.ComboBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.bnBusRespuestas = new System.Windows.Forms.Button();
-            this.lblCursoResp = new System.Windows.Forms.Label();
-            this.cbxCursoResp = new System.Windows.Forms.ComboBox();
             this.gridPruebCalif = new System.Windows.Forms.DataGridView();
             this.columnNombrePrueba = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnComentario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,11 +66,14 @@
             this.columnEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnIdResp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnIdPrub = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnRespuestas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bnBusRespuestas = new System.Windows.Forms.Button();
+            this.lblCursoResp = new System.Windows.Forms.Label();
+            this.cbxCursoResp = new System.Windows.Forms.ComboBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabNotif.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.popo)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPruebActivas)).BeginInit();
             this.tabCursos.SuspendLayout();
@@ -89,6 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridPruebas)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPruebCalif)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -130,7 +123,6 @@
             // 
             // tabNotif
             // 
-            this.tabNotif.Controls.Add(this.groupBox3);
             this.tabNotif.Controls.Add(this.groupBox2);
             this.tabNotif.Location = new System.Drawing.Point(4, 27);
             this.tabNotif.Name = "tabNotif";
@@ -140,84 +132,6 @@
             this.tabNotif.Text = "Notificaciones";
             this.tabNotif.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.popo);
-            this.groupBox3.Location = new System.Drawing.Point(47, 287);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1137, 268);
-            this.groupBox3.TabIndex = 5;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Pruebas sin Calificación";
-            // 
-            // popo
-            // 
-            this.popo.ColumnHeadersHeight = 30;
-            this.popo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.popo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12});
-            this.popo.Location = new System.Drawing.Point(75, 34);
-            this.popo.Name = "popo";
-            this.popo.RowHeadersVisible = false;
-            this.popo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.popo.Size = new System.Drawing.Size(989, 228);
-            this.popo.TabIndex = 5;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.Frozen = true;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn7.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.Frozen = true;
-            this.dataGridViewTextBoxColumn8.HeaderText = "Estado";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn8.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.Frozen = true;
-            this.dataGridViewTextBoxColumn9.HeaderText = "Duración";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 160;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.Frozen = true;
-            this.dataGridViewTextBoxColumn10.HeaderText = "Comentario";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 250;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.Frozen = true;
-            this.dataGridViewTextBoxColumn11.HeaderText = "Creado el día";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Width = 250;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.Frozen = true;
-            this.dataGridViewTextBoxColumn12.HeaderText = "";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            this.dataGridViewTextBoxColumn12.Visible = false;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.bnBuscarAct);
@@ -226,14 +140,14 @@
             this.groupBox2.Controls.Add(this.gridPruebActivas);
             this.groupBox2.Location = new System.Drawing.Point(25, 11);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1159, 268);
+            this.groupBox2.Size = new System.Drawing.Size(1196, 519);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pruebas Inactivas";
             // 
             // bnBuscarAct
             // 
-            this.bnBuscarAct.Location = new System.Drawing.Point(22, 87);
+            this.bnBuscarAct.Location = new System.Drawing.Point(376, 39);
             this.bnBuscarAct.Name = "bnBuscarAct";
             this.bnBuscarAct.Size = new System.Drawing.Size(121, 27);
             this.bnBuscarAct.TabIndex = 10;
@@ -244,15 +158,15 @@
             // cbxCurs
             // 
             this.cbxCurs.FormattingEnabled = true;
-            this.cbxCurs.Location = new System.Drawing.Point(22, 55);
+            this.cbxCurs.Location = new System.Drawing.Point(164, 39);
             this.cbxCurs.Name = "cbxCurs";
-            this.cbxCurs.Size = new System.Drawing.Size(121, 26);
+            this.cbxCurs.Size = new System.Drawing.Size(182, 26);
             this.cbxCurs.TabIndex = 9;
             // 
             // lblcbxCurs
             // 
             this.lblcbxCurs.AutoSize = true;
-            this.lblcbxCurs.Location = new System.Drawing.Point(19, 34);
+            this.lblcbxCurs.Location = new System.Drawing.Point(17, 42);
             this.lblcbxCurs.Name = "lblcbxCurs";
             this.lblcbxCurs.Size = new System.Drawing.Size(126, 18);
             this.lblcbxCurs.TabIndex = 8;
@@ -269,11 +183,11 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
-            this.gridPruebActivas.Location = new System.Drawing.Point(164, 34);
+            this.gridPruebActivas.Location = new System.Drawing.Point(97, 88);
             this.gridPruebActivas.Name = "gridPruebActivas";
             this.gridPruebActivas.RowHeadersVisible = false;
             this.gridPruebActivas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.gridPruebActivas.Size = new System.Drawing.Size(989, 228);
+            this.gridPruebActivas.Size = new System.Drawing.Size(989, 399);
             this.gridPruebActivas.TabIndex = 4;
             this.gridPruebActivas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPruebActivas_CellDoubleClick);
             // 
@@ -464,7 +378,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.gridPruebCalif);
+            this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.bnBusRespuestas);
             this.tabPage1.Controls.Add(this.lblCursoResp);
             this.tabPage1.Controls.Add(this.cbxCursoResp);
@@ -476,36 +390,6 @@
             this.tabPage1.Text = "Calificar";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // bnBusRespuestas
-            // 
-            this.bnBusRespuestas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnBusRespuestas.Location = new System.Drawing.Point(407, 24);
-            this.bnBusRespuestas.Name = "bnBusRespuestas";
-            this.bnBusRespuestas.Size = new System.Drawing.Size(126, 36);
-            this.bnBusRespuestas.TabIndex = 9;
-            this.bnBusRespuestas.Text = "Buscar Pruebas";
-            this.bnBusRespuestas.UseVisualStyleBackColor = true;
-            this.bnBusRespuestas.Click += new System.EventHandler(this.bnBusRespuestas_Click);
-            // 
-            // lblCursoResp
-            // 
-            this.lblCursoResp.AutoSize = true;
-            this.lblCursoResp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCursoResp.Location = new System.Drawing.Point(70, 37);
-            this.lblCursoResp.Name = "lblCursoResp";
-            this.lblCursoResp.Size = new System.Drawing.Size(53, 18);
-            this.lblCursoResp.TabIndex = 8;
-            this.lblCursoResp.Text = "Curso:";
-            // 
-            // cbxCursoResp
-            // 
-            this.cbxCursoResp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxCursoResp.FormattingEnabled = true;
-            this.cbxCursoResp.Location = new System.Drawing.Point(212, 29);
-            this.cbxCursoResp.Name = "cbxCursoResp";
-            this.cbxCursoResp.Size = new System.Drawing.Size(167, 26);
-            this.cbxCursoResp.TabIndex = 7;
-            // 
             // gridPruebCalif
             // 
             this.gridPruebCalif.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -516,8 +400,9 @@
             this.columnCed,
             this.columnEmail,
             this.columnIdResp,
-            this.columnIdPrub});
-            this.gridPruebCalif.Location = new System.Drawing.Point(88, 115);
+            this.columnIdPrub,
+            this.columnRespuestas});
+            this.gridPruebCalif.Location = new System.Drawing.Point(106, 56);
             this.gridPruebCalif.Name = "gridPruebCalif";
             this.gridPruebCalif.RowHeadersVisible = false;
             this.gridPruebCalif.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -581,6 +466,54 @@
             this.columnIdPrub.ReadOnly = true;
             this.columnIdPrub.Visible = false;
             // 
+            // columnRespuestas
+            // 
+            this.columnRespuestas.Frozen = true;
+            this.columnRespuestas.HeaderText = "";
+            this.columnRespuestas.Name = "columnRespuestas";
+            this.columnRespuestas.ReadOnly = true;
+            this.columnRespuestas.Visible = false;
+            // 
+            // bnBusRespuestas
+            // 
+            this.bnBusRespuestas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnBusRespuestas.Location = new System.Drawing.Point(407, 24);
+            this.bnBusRespuestas.Name = "bnBusRespuestas";
+            this.bnBusRespuestas.Size = new System.Drawing.Size(126, 36);
+            this.bnBusRespuestas.TabIndex = 9;
+            this.bnBusRespuestas.Text = "Buscar Pruebas";
+            this.bnBusRespuestas.UseVisualStyleBackColor = true;
+            this.bnBusRespuestas.Click += new System.EventHandler(this.bnBusRespuestas_Click);
+            // 
+            // lblCursoResp
+            // 
+            this.lblCursoResp.AutoSize = true;
+            this.lblCursoResp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCursoResp.Location = new System.Drawing.Point(76, 32);
+            this.lblCursoResp.Name = "lblCursoResp";
+            this.lblCursoResp.Size = new System.Drawing.Size(130, 18);
+            this.lblCursoResp.TabIndex = 8;
+            this.lblCursoResp.Text = "Seleccione Curso:";
+            // 
+            // cbxCursoResp
+            // 
+            this.cbxCursoResp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCursoResp.FormattingEnabled = true;
+            this.cbxCursoResp.Location = new System.Drawing.Point(212, 29);
+            this.cbxCursoResp.Name = "cbxCursoResp";
+            this.cbxCursoResp.Size = new System.Drawing.Size(167, 26);
+            this.cbxCursoResp.TabIndex = 7;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.gridPruebCalif);
+            this.groupBox3.Location = new System.Drawing.Point(49, 82);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1087, 449);
+            this.groupBox3.TabIndex = 11;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Pruebas sin calificar";
+            // 
             // InicioProfe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -597,8 +530,6 @@
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabNotif.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.popo)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPruebActivas)).EndInit();
@@ -609,6 +540,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPruebCalif)).EndInit();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -627,7 +559,6 @@
         private System.Windows.Forms.Button bnNueva;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView gridPruebas;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button bnBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn txNombre;
@@ -643,13 +574,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridView popo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.Button bnBuscarAct;
         private System.Windows.Forms.ComboBox cbxCurs;
         private System.Windows.Forms.Label lblcbxCurs;
@@ -665,5 +589,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnIdResp;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnIdPrub;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnRespuestas;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

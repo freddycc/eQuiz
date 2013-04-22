@@ -14,12 +14,14 @@ namespace eQuiz
         private string prueba_id;
         private string respuesta_id;
         Pruebas pruebas = new Pruebas();
-        public formCalificar( string prueba_id ,string respuesta_id)
+        public formCalificar( string prueba_id ,string respuesta_id, string respuestas)
         {
             InitializeComponent();
             this.respuesta_id = respuesta_id;
             this.prueba_id = prueba_id;
             this.cargarPreguntas();
+            this.txtRespuestas.Text = respuestas;
+
         }
 
         public void cargarPreguntas()
@@ -30,8 +32,20 @@ namespace eQuiz
             this.txtPreguntas.Text = resource.Tables[0].Rows[0].ItemArray[5].ToString();
             this.lblComentarios.Text = resource.Tables[0].Rows[0].ItemArray[0].ToString();
             this.lblNombre.Text = this.lblNombre.Text + resource.Tables[0].Rows[0].ItemArray[4].ToString();
+        }
 
-
+        private void bnCalificar_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("¿Está seguro desea asignar esta nota a la prueba?","Calificar",MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes) 
+            {
+                Pruebas prueb = new Pruebas();
+                if (prueb.calificarPrueba(this.respuesta_id, this.txNota.Value.ToString()))
+                {
+                    MessageBox.Show("Nota asignada correctamente.");
+                    this.Dispose(); this.Close();
+                }
+            }
 
         }
     }
