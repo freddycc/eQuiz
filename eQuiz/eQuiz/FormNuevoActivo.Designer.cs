@@ -61,6 +61,7 @@
             this.btncancelar.TabIndex = 2;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // FormNuevoActivo
             // 
@@ -71,6 +72,7 @@
             this.Controls.Add(this.btnaceptar);
             this.Controls.Add(this.label1);
             this.Name = "FormNuevoActivo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormNuevoActivo";
             this.ResumeLayout(false);
             this.PerformLayout();

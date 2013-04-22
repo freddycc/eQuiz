@@ -42,6 +42,15 @@ class EstudiantesController < ApplicationController
       end
     end
   end
+
+  def email
+    @estudiante = Estudiante.new
+    @estudiante.email=params[:email]
+    UserMailer.registration_confirmation(@estudiante).deliver
+    return if request.xhr?
+      render :text => 'Message sent successfully'
+  end
+
   # GET /estudiantes/new
   # GET /estudiantes/new.json
   def new

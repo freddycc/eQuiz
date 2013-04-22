@@ -16,9 +16,13 @@ Dbmysql::Application.routes.draw do
 
   resources :estudiantes
 
+
+
+
   #Actions of students
   match 'estudiantes/add' => 'estudiantes#add', :via => :post
   match 'estudiantes/estud' => 'estudiantes#estud', :via => :post
+  match 'estudiantes/email' => 'estudiantes#email', :via => :post
 
   #Actions of teachers
   match 'profesores/add' => 'profesores#add', :via => :post
@@ -32,6 +36,8 @@ Dbmysql::Application.routes.draw do
   match 'cursos/:curso_id/:estudiante_id/delmatricula' => 'cursos#delmatricula', :via => :delete
     #obtiene las pruebas del curso
   match 'cursos/:id/pruebas' => 'cursos#pruebas', :via => :get
+ 
+  
 
   #Actions of tests
     #obtiene pruebas activas del curso
