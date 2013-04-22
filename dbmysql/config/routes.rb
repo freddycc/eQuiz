@@ -2,7 +2,7 @@ Dbmysql::Application.routes.draw do
   resources :matriculas
 
 
-  resources :respuesta
+  
 
 
   resources :pruebas
@@ -38,6 +38,10 @@ Dbmysql::Application.routes.draw do
   match 'cursos/:id/activas' => 'pruebas#activas', :via => :get
   match 'cursos/:id/inactivas' => 'pruebas#inactivas', :via => :get
   match 'pruebas/:id/updateprueba' => 'pruebas#updateinactiva', :via => :put
+
+  match 'respuesta/:prueba_id/getrespuestas' => 'respuesta#getrespuestas', :via => :get
+  match 'respuesta/:id/estudiantes' => 'respuesta#estudiantes', :via => :get
+  match 'respuesta/:id' => 'respuesta#show', :via => :get
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

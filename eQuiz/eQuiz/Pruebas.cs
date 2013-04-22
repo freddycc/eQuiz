@@ -9,6 +9,22 @@ namespace eQuiz
     class Pruebas
     {
         HttpConexion ejecutar = new HttpConexion();
+        public DataSet estuduateResp(string respuesta_id)
+        {
+            string url = "http://localhost:3000/respuesta/" + respuesta_id + "/estudiantes.xml";
+            return ejecutar.ConvertXMLToDataSet(url);
+        }
+        public DataSet getRespuesta(string respuesta_id)
+        {
+            string url = "http://localhost:3000/respuesta/" + respuesta_id+ ".xml";
+            return ejecutar.ConvertXMLToDataSet(url);
+        }
+
+        public DataSet obtenerRespuestas(string prueba_id)
+        {
+            string url = "http://localhost:3000/respuesta/" + prueba_id + "/getrespuestas.xml";
+            return ejecutar.ConvertXMLToDataSet(url);
+        }
         public DataSet obtenerPreguntas(string prueba_id)
         {
             string url = "http://localhost:3000/pruebas/" + prueba_id + ".xml";
