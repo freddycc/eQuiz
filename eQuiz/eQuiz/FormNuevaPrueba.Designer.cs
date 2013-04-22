@@ -72,12 +72,12 @@
             // lblTiempo
             // 
             this.lblTiempo.AutoSize = true;
-            this.lblTiempo.Location = new System.Drawing.Point(545, 57);
+            this.lblTiempo.Location = new System.Drawing.Point(518, 56);
             this.lblTiempo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTiempo.Name = "lblTiempo";
-            this.lblTiempo.Size = new System.Drawing.Size(139, 16);
+            this.lblTiempo.Size = new System.Drawing.Size(206, 16);
             this.lblTiempo.TabIndex = 2;
-            this.lblTiempo.Text = "Tiempo de aplicación";
+            this.lblTiempo.Text = "Tiempo de aplicación en minutos";
             // 
             // lblFecha
             // 

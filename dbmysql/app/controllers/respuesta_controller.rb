@@ -67,7 +67,7 @@ class RespuestaController < ApplicationController
   def create
     @respuesta = Respuesta.new
     @respuesta.estudiante_id = params[:estudiante_id]
-    @respuesta.prueba_id = params[:estudiante_id]
+    @respuesta.prueba_id = params[:prueba_id]
     @respuesta.respuesta = params[:respuesta]
 
     respond_to do |format|
