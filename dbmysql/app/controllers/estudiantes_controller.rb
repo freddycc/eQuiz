@@ -43,9 +43,12 @@ class EstudiantesController < ApplicationController
     end
   end
 
-  def correo
-    @estudiante = params[:email]
+  def email
+    @estudiante = Estudiante.new
+    @estudiante.email=params[:email]
     UserMailer.registration_confirmation(@estudiante).deliver
+    return if request.xhr?
+      render :text => 'Message sent successfully'
   end
 
   # GET /estudiantes/new

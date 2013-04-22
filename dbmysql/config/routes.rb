@@ -22,7 +22,7 @@ Dbmysql::Application.routes.draw do
   #Actions of students
   match 'estudiantes/add' => 'estudiantes#add', :via => :post
   match 'estudiantes/estud' => 'estudiantes#estud', :via => :post
-  match 'estudiantes/correo' => 'estudiantes#correo', :via => :post
+  match 'estudiantes/email' => 'estudiantes#email', :via => :post
 
   #Actions of teachers
   match 'profesores/add' => 'profesores#add', :via => :post
