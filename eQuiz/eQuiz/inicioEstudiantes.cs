@@ -56,9 +56,18 @@ namespace eQuiz
                         resource.Tables[1].Rows[i].ItemArray[2].ToString(),
                         resource.Tables[1].Rows[i].ItemArray[0].ToString(),
                         resource.Tables[2].Rows[i].ItemArray[1].ToString(),
-                        resource.Tables[3].Rows[i].ItemArray[1].ToString());
+                        resource.Tables[5].Rows[i].ItemArray[1].ToString());
                 }
             }
+        }
+
+        private void gridPruebActivas_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = Convert.ToInt32(this.gridPruebActivas.CurrentRow.Index);
+            string prueba_id = this.gridPruebActivas.Rows[row].Cells[5].Value + "",
+                estudiante_id="3";
+            responderPrueba responder = new responderPrueba(prueba_id, estudiante_id);
+            responder.Show();
         }
     }
 }

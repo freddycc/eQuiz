@@ -13,6 +13,7 @@ namespace eQuiz
     {
         public FormNuevaPrueba(string curso_id)
         {
+           
             InitializeComponent();
             this.lblIdCurso.Visible = false;
             this.cbxEstado.Items.Add("activa");

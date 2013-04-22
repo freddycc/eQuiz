@@ -18,6 +18,7 @@ namespace eQuiz
             this.actTablas();
             this.cbxCurso.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cbxCurs.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.cbxCursoResp.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         public void actTablas()
@@ -42,6 +43,10 @@ namespace eQuiz
                 this.cbxCurs.DisplayMember = "nombre";
                 this.cbxCurs.ValueMember = "id";
                 this.cbxCurs.SelectedIndex = 0;
+                this.cbxCursoResp.DataSource = cursosCombo;
+                this.cbxCursoResp.DisplayMember = "nombre";
+                this.cbxCursoResp.ValueMember = "id";
+                this.cbxCursoResp.SelectedIndex = 0;
             }
 
             //resorce = con.ConvertXMLToDataSet("http://localhost:3000/profesores/12/activas.xml");
@@ -179,6 +184,46 @@ namespace eQuiz
             string curso_id = this.cbxCurso.SelectedValue.ToString();
             FormNuevaPrueba nueva = new FormNuevaPrueba(curso_id);
             nueva.Show();
+        }
+
+        private void bnBusRespuestas_Click(object sender, EventArgs e)
+        {
+            string curso_id = this.cbxCurso.SelectedValue.ToString();
+            Cursos c = new Cursos();
+            Pruebas p = new Pruebas();
+            DataSet pruebas = c.obtenerPruebas(curso_id),respuestas,estudiante;
+            if (pruebas != null)
+            {
+                //resource.Tables[5].Rows[i].ItemArray[1].ToString());
+                for (int i = 0; i <= pruebas.Tables[1].Rows.Count - 1; i++)
+                { 
+                    string idprueba = pruebas.Tables["id"].Rows[i].ItemArray[1].ToString();
+                    respuestas = p.obtenerRespuestas(idprueba);
+                    if (respuestas != null) 
+                    {
+                        for (int j = 0; j <= respuestas.Tables[1].Rows.Count - 1; j++)
+                        {
+                            string idrespuesta = respuestas.Tables["id"].Rows[j].ItemArray[1].ToString();
+                            estudiante = p.estuduateResp(idrespuesta);
+                            this.gridPruebCalif.Rows.Add(pruebas.Tables[1].Rows[i].ItemArray[4].ToString(),
+                                pruebas.Tables[1].Rows[i].ItemArray[0].ToString(),
+                                estudiante.Tables[0].Rows[0].ItemArray[4].ToString(),
+                                estudiante.Tables[0].Rows[0].ItemArray[1].ToString(),
+                                estudiante.Tables[0].Rows[0].ItemArray[3].ToString(),
+                                idrespuesta, idprueba);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void gridPruebCalif_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = Convert.ToInt32(this.gridPruebCalif.CurrentRow.Index);
+            string respuesta_id = this.gridPruebCalif.Rows[row].Cells[5].Value + "";
+            string prueba_id = this.gridPruebCalif.Rows[row].Cells[6].Value + "";
+            formCalificar calificar = new formCalificar(prueba_id, respuesta_id);
+            calificar.Show();
         }
 
     }

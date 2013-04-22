@@ -13,12 +13,14 @@ class PruebasController < ApplicationController
 
   # GET /pruebas/1
   # GET /pruebas/1.json
+  # GET /pruebas/1.xml
   def show
     @prueba = Prueba.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @prueba }
+      format.xml { render xml: @prueba }
     end
   end
 
