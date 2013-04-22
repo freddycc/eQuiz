@@ -28,6 +28,23 @@ class ProfesoresController < ApplicationController
     end
   end
 
+  def getcursos
+    @profesore = Profesore.find(params[:profe_id])
+    @cursos = @profesore.cursos
+
+    respond_to do |format|
+      if @cursos.empty?
+        format.html # index.html.erb
+        format.json { head :no_content }
+        format.xml { head :no_content }
+      else
+        format.html # index.html.erb
+        format.json { render json: @cursos }
+        format.xml { render xml: @cursos }
+      end
+    end
+  end
+
   def prof
     @profesore = Profesore.where(:username => params[:username], :password => params[:password])
    respond_to do |format|
@@ -37,8 +54,8 @@ class ProfesoresController < ApplicationController
         format.xml { head :no_content }
       else
         format.html # index.html.erb
-        format.json { render json: @profesores }
-        format.xml { render xml: @profesores }
+        format.json { render json: @profesore }
+        format.xml { render xml: @profesore }
       end
     end
   end  

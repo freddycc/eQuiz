@@ -32,16 +32,16 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gridPruebActivas = new System.Windows.Forms.DataGridView();
-            this.bnBuscar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnIdActiva = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bnBuscar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -104,44 +104,6 @@
             this.gridPruebActivas.TabIndex = 5;
             this.gridPruebActivas.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPruebActivas_CellContentDoubleClick);
             // 
-            // bnBuscar
-            // 
-            this.bnBuscar.Location = new System.Drawing.Point(458, 45);
-            this.bnBuscar.Name = "bnBuscar";
-            this.bnBuscar.Size = new System.Drawing.Size(91, 28);
-            this.bnBuscar.TabIndex = 3;
-            this.bnBuscar.Text = "Buscar";
-            this.bnBuscar.UseVisualStyleBackColor = true;
-            this.bnBuscar.Click += new System.EventHandler(this.bnBuscar_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(72, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 24);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Seleccione Curso";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(243, 47);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(199, 26);
-            this.comboBox1.TabIndex = 1;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1312, 633);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Consultar Notas";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.Frozen = true;
@@ -192,6 +154,44 @@
             this.columnIdActiva.ReadOnly = true;
             this.columnIdActiva.Visible = false;
             // 
+            // bnBuscar
+            // 
+            this.bnBuscar.Location = new System.Drawing.Point(458, 45);
+            this.bnBuscar.Name = "bnBuscar";
+            this.bnBuscar.Size = new System.Drawing.Size(91, 28);
+            this.bnBuscar.TabIndex = 3;
+            this.bnBuscar.Text = "Buscar";
+            this.bnBuscar.UseVisualStyleBackColor = true;
+            this.bnBuscar.Click += new System.EventHandler(this.bnBuscar_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(72, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(160, 24);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Seleccione Curso";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(243, 47);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(199, 26);
+            this.comboBox1.TabIndex = 1;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1312, 633);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Consultar Notas";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // inicioEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,6 +202,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "inicioEstudiantes";
             this.Activated += new System.EventHandler(this.inicioEstudiantes_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.inicioEstudiantes_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

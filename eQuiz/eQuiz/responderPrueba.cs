@@ -29,7 +29,7 @@ namespace eQuiz
             this.txtPreguntas.Text = resource.Tables[0].Rows[0].ItemArray[5].ToString();
             this.lblComentarios.Text = resource.Tables[0].Rows[0].ItemArray[0].ToString();
             this.lblNombre.Text = this.lblNombre.Text + resource.Tables[0].Rows[0].ItemArray[4].ToString();
-            this.lblDuracion.Text = "1";// resource.Tables[0].Rows[0].ItemArray[2].ToString();
+            this.lblDuracion.Text = resource.Tables[0].Rows[0].ItemArray[2].ToString();
             int duracion = Int32.Parse(this.lblDuracion.Text);
             duracion = duracion * 60;
             duracion = duracion * 1000;

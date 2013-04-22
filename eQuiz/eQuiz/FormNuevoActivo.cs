@@ -11,11 +11,13 @@ namespace eQuiz
 {
     public partial class FormNuevoActivo : Form
     {
+        string curso_id = "";
         string ID = "";
-        public FormNuevoActivo(String id)
+        public FormNuevoActivo(String id, String cursoid)
         {
             InitializeComponent();
             this.ID = id;
+            this.curso_id = cursoid;
            
         }
 
@@ -24,7 +26,7 @@ namespace eQuiz
             Profesor prof = new Profesor();
             prof.editinactivo(ID);
             Cursos cursos = new Cursos();
-            DataSet resource = cursos.obtenerEstudiantes(ID);
+            DataSet resource = cursos.obtenerEstudiantes(curso_id);
             string[] var = new string[2];
             string[] valor = new string[2];
             if (resource != null)

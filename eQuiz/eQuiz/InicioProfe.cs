@@ -11,10 +11,12 @@ namespace eQuiz
 {
     public partial class InicioProfe : Form
     {
+        string profesor_Id = "";
         HttpConexion con = new HttpConexion();
-        public InicioProfe()
+        public InicioProfe(string profeId)
         {
             InitializeComponent();
+            this.profesor_Id = profeId;
             this.actTablas();
             this.cbxCurso.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cbxCurs.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -23,7 +25,7 @@ namespace eQuiz
 
         public void actTablas()
         {
-            DataSet resorce = con.ConvertXMLToDataSet("http://localhost:3000/cursos.xml");
+            DataSet resorce = con.ConvertXMLToDataSet("http://localhost:3000/profesores/"+this.profesor_Id+"/cursos.xml");
             if (resorce != null)
             {
                 DataTable cursos = resorce.Tables[1], cursosCombo = new DataTable();
@@ -74,8 +76,8 @@ namespace eQuiz
             Estudiante estud = new Estudiante();
             int row = Convert.ToInt32(this.gridPruebActivas.CurrentRow.Index);
             string id = this.gridPruebActivas.Rows[row].Cells[5].Value + "";
-
-            FormNuevoActivo edt = new FormNuevoActivo(id);
+            string cursoid = this.cbxCurs.SelectedValue.ToString();
+            FormNuevoActivo edt = new FormNuevoActivo(id,cursoid);
             edt.Show();
            // MessageBox.Show("Prueba Activada");
 
@@ -83,6 +85,7 @@ namespace eQuiz
         }
          public void cargarRespuestas()
          {
+             this.gridPruebCalif.Rows.Clear();
              string curso_id = this.cbxCurso.SelectedValue.ToString();
              Cursos c = new Cursos();
              Pruebas p = new Pruebas();
@@ -207,6 +210,11 @@ namespace eQuiz
             string respuestas = this.gridPruebCalif.Rows[row].Cells[7].Value + "";
             formCalificar calificar = new formCalificar(prueba_id, respuesta_id,respuestas);
             calificar.Show();
+        }
+
+        private void InicioProfe_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
 
     }

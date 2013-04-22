@@ -58,6 +58,7 @@
             this.lblCurso = new System.Windows.Forms.Label();
             this.cbxCurso = new System.Windows.Forms.ComboBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.gridPruebCalif = new System.Windows.Forms.DataGridView();
             this.columnNombrePrueba = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnComentario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,7 +71,6 @@
             this.bnBusRespuestas = new System.Windows.Forms.Button();
             this.lblCursoResp = new System.Windows.Forms.Label();
             this.cbxCursoResp = new System.Windows.Forms.ComboBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabNotif.SuspendLayout();
@@ -80,8 +80,8 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPruebas)).BeginInit();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridPruebCalif)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPruebCalif)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -390,6 +390,16 @@
             this.tabPage1.Text = "Calificar";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.gridPruebCalif);
+            this.groupBox3.Location = new System.Drawing.Point(49, 82);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1087, 449);
+            this.groupBox3.TabIndex = 11;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Pruebas sin calificar";
+            // 
             // gridPruebCalif
             // 
             this.gridPruebCalif.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -504,16 +514,6 @@
             this.cbxCursoResp.Size = new System.Drawing.Size(167, 26);
             this.cbxCursoResp.TabIndex = 7;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.gridPruebCalif);
-            this.groupBox3.Location = new System.Drawing.Point(49, 82);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1087, 449);
-            this.groupBox3.TabIndex = 11;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Pruebas sin calificar";
-            // 
             // InicioProfe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -526,6 +526,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "eQuiz - Profesor";
             this.Activated += new System.EventHandler(this.InicioProfe_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InicioProfe_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -539,8 +540,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridPruebas)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridPruebCalif)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridPruebCalif)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
