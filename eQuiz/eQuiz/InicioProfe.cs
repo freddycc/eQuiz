@@ -58,22 +58,7 @@ namespace eQuiz
 
         private void bnBuscar_Click(object sender, EventArgs e)
         {
-            Cursos curso = new Cursos();
-            this.gridPruebas.Rows.Clear();
-            string curso_id = this.cbxCurs.SelectedValue.ToString();
-            DataSet resource = curso.obtenerPruebas(curso_id);
-            if (resource != null)
-            {
-                for (int i = 0; i <= resource.Tables[1].Rows.Count - 1; i++)
-                {
-                    this.gridPruebas.Rows.Add(resource.Tables[1].Rows[i].ItemArray[4].ToString(), 
-                        resource.Tables[1].Rows[i].ItemArray[3].ToString(), 
-                        resource.Tables[1].Rows[i].ItemArray[2].ToString(), 
-                        resource.Tables[1].Rows[i].ItemArray[0].ToString(),
-                        resource.Tables[2].Rows[i].ItemArray[1].ToString(), 
-                        resource.Tables[3].Rows[i].ItemArray[1].ToString());                    
-                }
-            }
+            this.cargarPruebas();
         }
 
         private void bnBuscarAct_Click(object sender, EventArgs e)
@@ -81,43 +66,7 @@ namespace eQuiz
 
             this.cargaratvias();
 
-            Cursos curso = new Cursos();
-            this.gridPruebActivas.Rows.Clear();
-            string curso_id = this.cbxCurs.SelectedValue.ToString();
-            DataSet resource = curso.obtenerPruebInactivas(curso_id);
-            if (resource != null)
-            {
-                if (resource.Tables.Count < 8)
-                {
-                    for (int i = 0; i <= resource.Tables[1].Rows.Count - 1; i++)
-                    {
-                        this.gridPruebActivas.Rows.Add(resource.Tables[1].Rows[i].ItemArray[4].ToString(),
-                                resource.Tables[1].Rows[i].ItemArray[3].ToString(),
-                                resource.Tables[1].Rows[i].ItemArray[2].ToString(),
-                                resource.Tables[1].Rows[i].ItemArray[0].ToString(),
-                                resource.Tables[1].Rows[i].ItemArray[1].ToString(),
-                                resource.Tables[2].Rows[i].ItemArray[0].ToString(),
-                                resource.Tables[5].Rows[i].ItemArray[1].ToString());
-                    }
-                }
-                else
-                {
-                    for (int i = 0; i <= resource.Tables[1].Rows.Count - 1; i++)
-                    {
-                        if (resource.Tables[2].Rows[i].ItemArray[0].Equals("true"))
-                        { }
-                        else
-                        {
-                            this.gridPruebActivas.Rows.Add(resource.Tables[9].Rows[i].ItemArray[1].ToString(),
-                                resource.Tables[6].Rows[i].ItemArray[1].ToString(),
-                                resource.Tables[5].Rows[i].ItemArray[1].ToString(),
-                                resource.Tables[2].Rows[i].ItemArray[1].ToString(),
-                                resource.Tables[3].Rows[i].ItemArray[1].ToString(),
-                                resource.Tables[8].Rows[i].ItemArray[1].ToString());
-                        }
-                    }
-                }
-            }
+            
 
         }
          private void gridPruebActivas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -132,7 +81,64 @@ namespace eQuiz
 
             
         }
+         public void cargarRespuestas()
+         {
+             string curso_id = this.cbxCurso.SelectedValue.ToString();
+             Cursos c = new Cursos();
+             Pruebas p = new Pruebas();
+             DataSet pruebas = c.obtenerPruebas(curso_id), respuestas, estudiante;
+             if (pruebas != null)
+             {
+                 //resource.Tables[5].Rows[i].ItemArray[1].ToString());
+                 for (int i = 0; i <= pruebas.Tables[1].Rows.Count - 1; i++)
+                 {
+                     string idprueba = pruebas.Tables["id"].Rows[i].ItemArray[1].ToString();
+                     respuestas = p.obtenerRespuestas(idprueba);
+                     if (respuestas != null)
+                     {
+                         if (respuestas.Tables.Count > 7)
+                         {
+                             for (int j = 0; j <= respuestas.Tables[1].Rows.Count - 1; j++)
+                             {
+                                 string idrespuesta = respuestas.Tables["id"].Rows[j].ItemArray[1].ToString();
+                                 estudiante = p.estuduateResp(idrespuesta);
+                                 if (respuestas.Tables["calificacion"].Rows[j].ItemArray[0].ToString().Equals("true"))
+                                 {
+                                     this.gridPruebCalif.Rows.Add(pruebas.Tables[1].Rows[i].ItemArray[4].ToString(),
+                                         pruebas.Tables[1].Rows[i].ItemArray[0].ToString(),
+                                         estudiante.Tables[0].Rows[0].ItemArray[4].ToString(),
+                                         estudiante.Tables[0].Rows[0].ItemArray[1].ToString(),
+                                         estudiante.Tables[0].Rows[0].ItemArray[3].ToString(),
+                                         idrespuesta, idprueba, respuestas.Tables[1].Rows[j].ItemArray[1].ToString());
+                                 }
+                             }
+                         }
+                         else
+                         {
 
+                         }
+                     }
+                 }
+             }
+         }
+         public void cargarPruebas() {
+             Cursos curso = new Cursos();
+             this.gridPruebas.Rows.Clear();
+             string curso_id = this.cbxCurs.SelectedValue.ToString();
+             DataSet resource = curso.obtenerPruebas(curso_id);
+             if (resource != null)
+             {
+                 for (int i = 0; i <= resource.Tables[1].Rows.Count - 1; i++)
+                 {
+                     this.gridPruebas.Rows.Add(resource.Tables[1].Rows[i].ItemArray[4].ToString(),
+                         resource.Tables[1].Rows[i].ItemArray[3].ToString(),
+                         resource.Tables[1].Rows[i].ItemArray[2].ToString(),
+                         resource.Tables[1].Rows[i].ItemArray[0].ToString(),
+                         resource.Tables[2].Rows[i].ItemArray[1].ToString(),
+                         resource.Tables[3].Rows[i].ItemArray[1].ToString());
+                 }
+             }
+         }
          public void cargaratvias() {
              Cursos curso = new Cursos();
              this.gridPruebActivas.Rows.Clear();
@@ -175,7 +181,9 @@ namespace eQuiz
 
          private void InicioProfe_Activated(object sender, EventArgs e)
          {
+             this.cargarPruebas();
              this.cargaratvias();
+             this.cargarRespuestas();
          }
 
 
@@ -188,33 +196,7 @@ namespace eQuiz
 
         private void bnBusRespuestas_Click(object sender, EventArgs e)
         {
-            string curso_id = this.cbxCurso.SelectedValue.ToString();
-            Cursos c = new Cursos();
-            Pruebas p = new Pruebas();
-            DataSet pruebas = c.obtenerPruebas(curso_id),respuestas,estudiante;
-            if (pruebas != null)
-            {
-                //resource.Tables[5].Rows[i].ItemArray[1].ToString());
-                for (int i = 0; i <= pruebas.Tables[1].Rows.Count - 1; i++)
-                { 
-                    string idprueba = pruebas.Tables["id"].Rows[i].ItemArray[1].ToString();
-                    respuestas = p.obtenerRespuestas(idprueba);
-                    if (respuestas != null) 
-                    {
-                        for (int j = 0; j <= respuestas.Tables[1].Rows.Count - 1; j++)
-                        {
-                            string idrespuesta = respuestas.Tables["id"].Rows[j].ItemArray[1].ToString();
-                            estudiante = p.estuduateResp(idrespuesta);
-                            this.gridPruebCalif.Rows.Add(pruebas.Tables[1].Rows[i].ItemArray[4].ToString(),
-                                pruebas.Tables[1].Rows[i].ItemArray[0].ToString(),
-                                estudiante.Tables[0].Rows[0].ItemArray[4].ToString(),
-                                estudiante.Tables[0].Rows[0].ItemArray[1].ToString(),
-                                estudiante.Tables[0].Rows[0].ItemArray[3].ToString(),
-                                idrespuesta, idprueba);
-                        }
-                    }
-                }
-            }
+            this.cargarRespuestas();
         }
 
         private void gridPruebCalif_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -222,7 +204,8 @@ namespace eQuiz
             int row = Convert.ToInt32(this.gridPruebCalif.CurrentRow.Index);
             string respuesta_id = this.gridPruebCalif.Rows[row].Cells[5].Value + "";
             string prueba_id = this.gridPruebCalif.Rows[row].Cells[6].Value + "";
-            formCalificar calificar = new formCalificar(prueba_id, respuesta_id);
+            string respuestas = this.gridPruebCalif.Rows[row].Cells[7].Value + "";
+            formCalificar calificar = new formCalificar(prueba_id, respuesta_id,respuestas);
             calificar.Show();
         }
 

@@ -65,15 +65,15 @@ class RespuestaController < ApplicationController
   # POST /respuesta
   # POST /respuesta.json
   def create
-    @respuestum = Respuesta.new
-    @respuestum.estudiante_id = params[:estudiante_id]
-    @respuestum.prueba_id = params[:estudiante_id]
-    @respuestum.respuesta = params[:respuesta]
+    @respuesta = Respuesta.new
+    @respuesta.estudiante_id = params[:estudiante_id]
+    @respuesta.prueba_id = params[:estudiante_id]
+    @respuesta.respuesta = params[:respuesta]
 
     respond_to do |format|
-      if @respuestum.save
-        format.html { redirect_to @respuestum, notice: 'Respuestum was successfully created.' }
-        format.json { render json: @respuestum, status: :created, location: @respuestum }
+      if @respuesta.save
+        format.html { redirect_to @respuesta, notice: 'Respuestum was successfully created.' }
+        format.json { render json: @respuesta }
       else
         format.html { render action: "new" }
         format.json { head :no_content }
@@ -84,8 +84,8 @@ class RespuestaController < ApplicationController
   # PUT /respuesta/1
   # PUT /respuesta/1.json
   def update
-    @respuestum = Respuestum.find(params[:id])
-
+    @respuestum = Respuesta.find(params[:id])
+    @respuestum.calificacion = params[:calificacion]
     respond_to do |format|
       if @respuestum.update_attributes(params[:respuestum])
         format.html { redirect_to @respuestum, notice: 'Respuestum was successfully updated.' }
